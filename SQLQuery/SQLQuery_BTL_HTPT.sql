@@ -1,0 +1,7 @@
+/*CREATE DATABASE [BTL_HTPT]
+GO
+
+USE [BTL_HTPT]
+GO*/
+
+
