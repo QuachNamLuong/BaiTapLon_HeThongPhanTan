@@ -1,0 +1,10 @@
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.csproj.AssemblyReference.cache
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.Form2.resources
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.Properties.Resources.resources
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.csproj.GenerateResource.cache
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.csproj.CoreCompileInputs.cache
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\bin\Debug\HTPT_CHD.exe.config
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\bin\Debug\HTPT_CHD.exe
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\bin\Debug\HTPT_CHD.pdb
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.exe
+C:\Users\DELL\OneDrive\Máy tính\HTPT\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.pdb
