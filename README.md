@@ -45,5 +45,6 @@ lưu lại thời gian và nội dung cập nhật khi người dùng thêm sử
 	+ Cài đặt visual studio
 	+ Học lý thuyết
 
-![image](https://github.com/QuachNamLuong/BaiTapLon_HeThongPhanTan/assets/82036270/49497400-179a-4443-b3cc-c4701c71bb8c)
+![image](https://github.com/QuachNamLuong/BaiTapLon_HeThongPhanTan/assets/82036270/25c14093-9278-411e-94d1-d442e0422812)
+
 
