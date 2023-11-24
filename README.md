@@ -5,6 +5,5 @@ Tạo 5 bản sao cho CSDL SQL (Có 1 table gồm 5 trường dữ liệu với 
 Viết ứng dụng lan truyền cập nhật từ CSDL đến Bản sao 1, bản sao 1 đến bản sao 2 và bản sao 3, 4 và 5.
 
 
-
-![image](https://github.com/QuachNamLuong/BaiTapLon_HeThongPhanTan/assets/82036270/6e6f3a8a-a10c-4c51-9412-b5e524cc98fd)
+![image](https://github.com/QuachNamLuong/BaiTapLon_HeThongPhanTan/assets/82036270/49497400-179a-4443-b3cc-c4701c71bb8c)
 
