@@ -8,7 +8,7 @@ USE EmployeeManagement
 GO
 
 CREATE TABLE Employee(
-	EmployeeID INT IDENTITY(1, 1),
+	EmployeeID CHAR(5),
 	FullName NVARCHAR(100),
 	PhoneNo CHAR(15) UNIQUE,
 	Birthday DATE,
@@ -18,7 +18,7 @@ CREATE TABLE Employee(
 GO
 
 CREATE TABLE History(
-	EmployeeID INT,
+	EmployeeID CHAR(5),
 	UpdateTime DATETIME,
 	SiteUpdate NVARCHAR(100),
 	ContentUpdate NTEXT,
