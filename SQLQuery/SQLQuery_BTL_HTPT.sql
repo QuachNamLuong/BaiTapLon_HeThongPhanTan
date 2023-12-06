@@ -10,9 +10,9 @@ GO
 CREATE TABLE Employee(
 	EmployeeID INT,
 	FullName NVARCHAR(100) NOT NULL,
-	PhoneNo CHAR(15) UNIQUE NOT NULL,
-	Birthday DATE NOT NULL,
-	Salary DECIMAL(10, 2) NOT NULL,
+	PhoneNo CHAR(15) UNIQUE NOT NULL CHECK (PhoneNumber LIKE '[0-9]%' AND LEN(PhoneNumber) BETWEEN 10 AND 15),
+	Birthday DATE NOT NULL CHECK (Birthday >= '1900-01-01' AND Birthday <= GETDATE()),
+	Salary DECIMAL(10, 2) NOT NULL CHECK (Salary > 0),
 	CONSTRAINT PK_Employee PRIMARY KEY (EmployeeID)
 )
 GO
