@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-﻿
 CREATE DATABASE EmployeeManagement
-GO
-
 USE EmployeeManagement
-GO
 
 CREATE TABLE Employee(
 	EmployeeID CHAR(5),
@@ -14,8 +9,6 @@ CREATE TABLE Employee(
 	Adress NVARCHAR(100),
 	CONSTRAINT PK_Employee PRIMARY KEY (EmployeeID)
 )
-GO
-
 
 INSERT INTO Employee (EmployeeID, FullName, PhoneNo, Birthday, Adress)
 VALUES 
@@ -30,7 +23,7 @@ VALUES
 ('E009', N'Chris Martin', '4443332222', '1986-12-05', N'606 Pineapple St'),
 ('E010', N'Jessica White', '2223334444', '1994-06-08', N'707 Orange St');
 
-
+--- chạy dòng dưới rồi mới chạy sp
 Use EmployeeManagement;
 ---sp hiển thị danh sach nhân viên
 CREATE PROCEDURE SP_HienThiDanhSachNhanVien
