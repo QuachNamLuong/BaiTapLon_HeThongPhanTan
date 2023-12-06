@@ -17,3 +17,12 @@ CREATE TABLE Employee(
 )
 GO
 
+CREATE PROCEDURE SP_DeleteEmployee
+    @EmployeeID INT
+AS
+BEGIN
+    DELETE FROM Employee
+    WHERE EmployeeID = @EmployeeID;
+END
+GO
+
