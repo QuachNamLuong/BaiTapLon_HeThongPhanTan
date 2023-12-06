@@ -63,3 +63,4 @@ C:\Users\DELL\OneDrive\Máy tính\HTPT\BaiTapLon_HeThongPhanTan\HTPT_CHD\HTPT_CH
 C:\Users\DELL\OneDrive\Máy tính\HTPT\BaiTapLon_HeThongPhanTan\HTPT_CHD\HTPT_CHD\bin\Debug\DevExpress.XtraNavBar.v22.2.xml
 C:\Users\DELL\OneDrive\Máy tính\HTPT\BaiTapLon_HeThongPhanTan\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.FormEdit.resources
 C:\Users\DELL\OneDrive\Máy tính\HTPT\BaiTapLon_HeThongPhanTan\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.exe.licenses
+C:\Users\DELL\OneDrive\Máy tính\HTPT\BaiTapLon_HeThongPhanTan\HTPT_CHD\HTPT_CHD\obj\Debug\HTPT_CHD.FormDemo.resources
