@@ -38,6 +38,8 @@ namespace HTPT_CHD
             btn_sua.Click += btn_sua_Click;
         }
 
+       
+
         private void LoadData(string storedProcedureName, DataGridView dataGridView)
         {
             try
@@ -172,7 +174,7 @@ namespace HTPT_CHD
             return true;
         }
 
-        private void btn_them_Click(object sender, EventArgs e)
+        public void them(object sender, EventArgs e)
         {
             if (KTThongTin())
             {
@@ -209,6 +211,27 @@ namespace HTPT_CHD
                 }
             }
         }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            controlManager.TextBoxEmployeeId = txt_id;
+            controlManager.TextBoxFullName = txt_fullname;
+            controlManager.TextBoxPhoneNo = txt_phoneNo;
+            controlManager.TextBoxAddress = txt_address;
+            controlManager.DateTimePickerBirthday = date_birthday;
+            them(sender,e);
+            Reset();
+        }
+        /*private void btn_them_Click(object sender, EventArgs e)
+        {
+            controlManager.TextBoxEmployeeId = txt_id;
+            controlManager.TextBoxFullName = txt_fullname;
+            controlManager.TextBoxPhoneNo = txt_phoneNo;
+            controlManager.TextBoxAddress = txt_address;
+            controlManager.DateTimePickerBirthday = date_birthday;
+            them(sender, e);
+            Reset();
+        }*/
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -399,5 +422,6 @@ namespace HTPT_CHD
 
             LoadData("SP_HienThiDanhSachNhanVien", dataGridView5);
         }
+
     }
 }

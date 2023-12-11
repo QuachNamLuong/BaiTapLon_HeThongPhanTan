@@ -185,6 +185,7 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(229, 22);
             this.txt_id.TabIndex = 30;
+            //this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
             // 
             // txt_fullname
             // 
@@ -249,7 +250,7 @@
             this.btn_them.TabIndex = 23;
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
+            //this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // txt_address
             // 
