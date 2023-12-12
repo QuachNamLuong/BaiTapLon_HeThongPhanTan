@@ -229,6 +229,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SiteControl.Designer.cs">
+      <DependentUpon>SiteControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQLConnectionManager.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -239,6 +245,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SiteControl.resx">
+      <DependentUpon>SiteControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
