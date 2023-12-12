@@ -1,7 +1,7 @@
 ﻿
 namespace BTL_HTPT
 {
-    partial class FMain
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.

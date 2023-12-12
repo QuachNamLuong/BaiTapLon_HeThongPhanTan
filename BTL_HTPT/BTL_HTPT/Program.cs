@@ -16,7 +16,7 @@ namespace BTL_HTPT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FMain());
+            Application.Run(new MainForm());
         }
     }
 }

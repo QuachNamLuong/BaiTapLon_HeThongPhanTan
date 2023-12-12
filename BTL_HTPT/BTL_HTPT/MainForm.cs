@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BTL_HTPT
 {
-    public partial class FMain : Form
+    public partial class MainForm : Form
     {
-        public FMain()
+        public MainForm()
         {
             InitializeComponent();
         }

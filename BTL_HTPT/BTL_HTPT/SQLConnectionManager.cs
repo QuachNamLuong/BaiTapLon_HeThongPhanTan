@@ -6,13 +6,15 @@ namespace BTL_HTPT
 {
     class SQLConnectionManager
     {
-        private static string serverName = "", databaseName = "", userID = "", password = "";
+        private string serverName = "", databaseName = "", userID = "", password = "";
 
-        private static SqlConnection connection;
+        private SqlConnection connection;
 
-        public static SqlConnection Connection => connection;
+        public SqlConnection Connection => connection;
 
-        public static string ServerName
+        public string ConnectionString => connection.ConnectionString;
+
+        public string ServerName
         {
             get => serverName;
 
@@ -25,7 +27,7 @@ namespace BTL_HTPT
             }
         }
 
-        public static string DatabaseName
+        public string DatabaseName
         {
             get => databaseName;
 
@@ -38,7 +40,7 @@ namespace BTL_HTPT
             }
         }
 
-        public static string UserID
+        public string UserID
         {
             get => userID;
 
@@ -48,7 +50,7 @@ namespace BTL_HTPT
             }
         }
 
-        public static string Password
+        public string Password
         {
             get => password;
 
@@ -61,7 +63,7 @@ namespace BTL_HTPT
             }
         }
 
-        public static bool Login()
+        public bool Login()
         {
             bool check = true;
             try
@@ -86,7 +88,7 @@ namespace BTL_HTPT
             return check;
         }
 
-        public static bool Login(string serverName, string databaseName, string userID, string password)
+        public bool Login(string serverName, string databaseName, string userID, string password)
         {
             bool check = true;
             try
@@ -110,7 +112,7 @@ namespace BTL_HTPT
             return check;
         }
 
-        public static bool Open()
+        public bool Open()
         {
             bool check = true;
             if (Connection != null && connection.State != ConnectionState.Open)
@@ -132,7 +134,7 @@ namespace BTL_HTPT
             return check;
         }
 
-        public static bool Close()
+        public bool Close()
         {
             bool check = true;
             if (connection != null && connection.State != ConnectionState.Open)
@@ -150,20 +152,20 @@ namespace BTL_HTPT
             return check;
         }
 
-        public static DataTable ExecuteQuery(string query)
+        public DataTable ExecuteQuery(string query)
         {
             DataTable dataTable = new DataTable();
             if (connection != null)
             {
                 try
                 {
-                    SQLConnectionManager.Open();
+                    Open();
                     using (SqlCommand command = new SqlCommand(query, Connection))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
                         adapter.Fill(dataTable);
                     }
-                    SQLConnectionManager.Close();
+                    Close();
                 }
                 catch (SqlException e)
                 {
@@ -173,20 +175,20 @@ namespace BTL_HTPT
             return dataTable;
         }
 
-        public static DataTable ExecuteQuery(SqlCommand cmd)
+        public DataTable ExecuteQuery(SqlCommand cmd)
         {
             DataTable dataTable = new DataTable();
             if (connection != null)
             {
                 try
                 {
-                    SQLConnectionManager.Open();
+                    Open();
                     cmd.Connection = connection;
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(dataTable);
                     }
-                    SQLConnectionManager.Close();
+                    Close();
                 }
                 catch (SqlException e)
                 {
@@ -198,17 +200,17 @@ namespace BTL_HTPT
 
 
 
-        public static bool ExecuteNonQuery(string sql)
+        public bool ExecuteNonQuery(string sql)
         {
             bool check = true;
             try
             {
-                SQLConnectionManager.Open();
+                Open();
                 using (SqlCommand command = new SqlCommand(sql, Connection))
                 {
                     command.ExecuteNonQuery();
                 }
-                SQLConnectionManager.Close();
+                Close();
             }
             catch (SqlException e)
             {
@@ -218,15 +220,15 @@ namespace BTL_HTPT
             return check;
         }
 
-        public static bool ExecuteNonQuery(SqlCommand cmd)
+        public bool ExecuteNonQuery(SqlCommand cmd)
         {
             bool check = true;
             try
             {
-                SQLConnectionManager.Open();
+                Open();
                 cmd.Connection = connection;
                 cmd.ExecuteNonQuery();
-                SQLConnectionManager.Close();
+                Close();
             }
             catch (SqlException e)
             {
@@ -236,17 +238,17 @@ namespace BTL_HTPT
             return check;
         }
 
-        public static object ExecuteScalar(string sql)
+        public object ExecuteScalar(string sql)
         {
             object res = null;
             try
             {
-                SQLConnectionManager.Open();
+                Open();
                 using (SqlCommand command = new SqlCommand(sql, Connection))
                 {
                     res = command.ExecuteScalar();
                 }
-                SQLConnectionManager.Close();
+                Close();
             }
             catch (SqlException e)
             {
@@ -254,19 +256,19 @@ namespace BTL_HTPT
             }
             return res;
         }
-        public static object ExecuteScalar2(string storedProcedureName, SqlParameter[] parameters)
+        public object ExecuteScalar2(string storedProcedureName, SqlParameter[] parameters)
         {
             object res = null;
             try
             {
-                SQLConnectionManager.Open();
+                Open();
                 using (SqlCommand command = new SqlCommand(storedProcedureName, Connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddRange(parameters);
                     res = command.ExecuteScalar();
                 }
-                SQLConnectionManager.Close();
+                Close();
             }
             catch (SqlException e)
             {
@@ -276,14 +278,14 @@ namespace BTL_HTPT
         }
 
 
-        public static object ExecuteScalar(SqlCommand cmd)
+        public object ExecuteScalar(SqlCommand cmd)
         {
             object res = null;
             try
             {
-                SQLConnectionManager.Open();
+                Open();
                 res = cmd.ExecuteScalar();
-                SQLConnectionManager.Close();
+                Close();
             }
             catch (SqlException e)
             {
