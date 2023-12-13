@@ -6,13 +6,29 @@ namespace BTL_HTPT
 {
     class SQLConnectionManager
     {
+        public SQLConnectionManager(string connectionString)
+        {
+            connection = new SqlConnection(connectionString);
+        }
+
         private string serverName = "", databaseName = "", userID = "", password = "";
 
         private SqlConnection connection;
 
         public SqlConnection Connection => connection;
 
-        public string ConnectionString => connection.ConnectionString;
+        public string ConnectionString
+        {
+            get => connection.ConnectionString;
+
+            set
+            {
+                if (value != null)
+                {
+                    connection.ConnectionString = value;
+                }
+            }
+        }
 
         public string ServerName
         {
@@ -280,7 +296,7 @@ namespace BTL_HTPT
 
         public object ExecuteScalar(SqlCommand cmd)
         {
-            object res = null;
+            object res;
             try
             {
                 Open();

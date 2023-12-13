@@ -45,11 +45,11 @@ namespace BTL_HTPT
             this.lblFullName = new System.Windows.Forms.Label();
             this.lblPhoneNo = new System.Windows.Forms.Label();
             this.lblBirthday = new System.Windows.Forms.Label();
-            this.lblSalary = new System.Windows.Forms.Label();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
+            this.lblSalary = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -87,7 +87,7 @@ namespace BTL_HTPT
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(599, 400);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(597, 483);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -103,29 +103,30 @@ namespace BTL_HTPT
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 113);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(593, 284);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(593, 367);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // textBox6
             // 
             this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Location = new System.Drawing.Point(418, 28);
+            this.textBox6.Location = new System.Drawing.Point(417, 30);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(172, 294);
+            this.textBox6.Size = new System.Drawing.Size(171, 332);
             this.textBox6.TabIndex = 12;
             // 
             // lblEmployyeeTable
             // 
             this.lblEmployyeeTable.AutoSize = true;
             this.lblEmployyeeTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmployyeeTable.Location = new System.Drawing.Point(3, 0);
+            this.lblEmployyeeTable.Location = new System.Drawing.Point(5, 2);
             this.lblEmployyeeTable.Name = "lblEmployyeeTable";
-            this.lblEmployyeeTable.Size = new System.Drawing.Size(409, 25);
+            this.lblEmployyeeTable.Size = new System.Drawing.Size(406, 25);
             this.lblEmployyeeTable.TabIndex = 12;
             this.lblEmployyeeTable.Text = "Employee Table";
             this.lblEmployyeeTable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -134,9 +135,9 @@ namespace BTL_HTPT
             // 
             this.lblActivityNotify.AutoSize = true;
             this.lblActivityNotify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblActivityNotify.Location = new System.Drawing.Point(418, 0);
+            this.lblActivityNotify.Location = new System.Drawing.Point(417, 2);
             this.lblActivityNotify.Name = "lblActivityNotify";
-            this.lblActivityNotify.Size = new System.Drawing.Size(172, 25);
+            this.lblActivityNotify.Size = new System.Drawing.Size(171, 25);
             this.lblActivityNotify.TabIndex = 12;
             this.lblActivityNotify.Text = "Activities Notify";
             this.lblActivityNotify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,10 +146,10 @@ namespace BTL_HTPT
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(409, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(406, 332);
             this.dataGridView1.TabIndex = 13;
             // 
             // tableLayoutPanel3
@@ -182,6 +183,7 @@ namespace BTL_HTPT
             this.btnPropagation.TabIndex = 4;
             this.btnPropagation.Text = "Propagation";
             this.btnPropagation.UseVisualStyleBackColor = true;
+            this.btnPropagation.Click += new System.EventHandler(this.BtnPropagation_Click);
             // 
             // btnReloadEmployeeTable
             // 
@@ -192,6 +194,7 @@ namespace BTL_HTPT
             this.btnReloadEmployeeTable.TabIndex = 3;
             this.btnReloadEmployeeTable.Text = "Reload";
             this.btnReloadEmployeeTable.UseVisualStyleBackColor = true;
+            this.btnReloadEmployeeTable.Click += new System.EventHandler(this.BtnReloadEmployeeTable_Click);
             // 
             // btnDeleteEmployyee
             // 
@@ -202,6 +205,7 @@ namespace BTL_HTPT
             this.btnDeleteEmployyee.TabIndex = 2;
             this.btnDeleteEmployyee.Text = "Delete";
             this.btnDeleteEmployyee.UseVisualStyleBackColor = true;
+            this.btnDeleteEmployyee.Click += new System.EventHandler(this.BtnDeleteEmployyee_Click);
             // 
             // btnEditEployeeInfo
             // 
@@ -212,6 +216,7 @@ namespace BTL_HTPT
             this.btnEditEployeeInfo.TabIndex = 1;
             this.btnEditEployeeInfo.Text = "Edit";
             this.btnEditEployeeInfo.UseVisualStyleBackColor = true;
+            this.btnEditEployeeInfo.Click += new System.EventHandler(this.BtnEditEployeeInfo_Click);
             // 
             // btnAddEmployee
             // 
@@ -222,6 +227,7 @@ namespace BTL_HTPT
             this.btnAddEmployee.TabIndex = 0;
             this.btnAddEmployee.Text = "Add";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.BtnAddEmployee_Click);
             // 
             // lblEmployeeID
             // 
@@ -267,17 +273,6 @@ namespace BTL_HTPT
             this.lblBirthday.Text = "Birthday:";
             this.lblBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSalary.Location = new System.Drawing.Point(312, 25);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(54, 25);
-            this.lblSalary.TabIndex = 6;
-            this.lblSalary.Text = "Salary:";
-            this.lblSalary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // txtEmployeeID
             // 
             this.txtEmployeeID.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -287,6 +282,7 @@ namespace BTL_HTPT
             this.txtEmployeeID.ReadOnly = true;
             this.txtEmployeeID.Size = new System.Drawing.Size(187, 20);
             this.txtEmployeeID.TabIndex = 7;
+            this.txtEmployeeID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEmployeeID_KeyPress);
             // 
             // txtFullName
             // 
@@ -307,6 +303,7 @@ namespace BTL_HTPT
             this.txtPhoneNo.ReadOnly = true;
             this.txtPhoneNo.Size = new System.Drawing.Size(187, 20);
             this.txtPhoneNo.TabIndex = 9;
+            this.txtPhoneNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPhoneNo_KeyPress);
             // 
             // dtpBirthday
             // 
@@ -317,6 +314,17 @@ namespace BTL_HTPT
             this.dtpBirthday.Size = new System.Drawing.Size(224, 20);
             this.dtpBirthday.TabIndex = 12;
             // 
+            // lblSalary
+            // 
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSalary.Location = new System.Drawing.Point(312, 25);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(54, 25);
+            this.lblSalary.TabIndex = 6;
+            this.lblSalary.Text = "Salary:";
+            this.lblSalary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // txtSalary
             // 
             this.txtSalary.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -326,15 +334,17 @@ namespace BTL_HTPT
             this.txtSalary.ReadOnly = true;
             this.txtSalary.Size = new System.Drawing.Size(224, 20);
             this.txtSalary.TabIndex = 7;
+            this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSalary_KeyPress);
             // 
             // SiteControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SiteControl";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Size = new System.Drawing.Size(605, 406);
+            this.Size = new System.Drawing.Size(603, 489);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

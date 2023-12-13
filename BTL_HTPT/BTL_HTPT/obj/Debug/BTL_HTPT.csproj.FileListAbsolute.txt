@@ -100,3 +100,4 @@ C:\Users\namlu\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_
 C:\Users\namlu\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.CopyComplete
 C:\Users\namlu\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.exe
 C:\Users\namlu\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.pdb
+C:\Users\namlu\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.MainForm.resources
