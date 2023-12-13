@@ -74,7 +74,10 @@ namespace BTL_HTPT
         public void LoadEmployeeTable()
         {
             string query = "SELECT * FROM V_Employee";
-            dataGridView1.DataSource = connection.ExecuteQuery(query);
+            using (SqlCommand command = new SqlCommand(query))
+            {
+                dataGridView1.DataSource = connection.GetTable(command);
+            }
         }
 
         private void BtnAddEmployee_Click(object sender, EventArgs e)
@@ -88,9 +91,20 @@ namespace BTL_HTPT
                 command.Parameters.Add("@PhoneNo", SqlDbType.Char).Value = txtPhoneNo.Text;
                 command.Parameters.Add("@Birthday", SqlDbType.Date).Value = dtpBirthday.Value;
                 command.Parameters.Add("@Salary", SqlDbType.Decimal).Value = txtSalary.Text;
-                if (connection.ExecuteNonQuery(command))
+                try
                 {
-                    MessageBox.Show("Can not add Employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (connection.ExecuteQuery(command))
+                    {
+                        MessageBox.Show("Employee added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add Employee. Check the input values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error adding Employee: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -104,9 +118,20 @@ namespace BTL_HTPT
                 command.Parameters.Add("@PhoneNo", SqlDbType.Char).Value = txtPhoneNo.Text;
                 command.Parameters.Add("@Birthday", SqlDbType.Date).Value = dtpBirthday.Value;
                 command.Parameters.Add("@Salary", SqlDbType.Decimal).Value = txtSalary.Text;
-                if (connection.ExecuteNonQuery(command))
+                try
                 {
-                    MessageBox.Show("Can not update Employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (connection.ExecuteQuery(command))
+                    {
+                        MessageBox.Show("Employee updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update Employee. Check the input values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating Employee: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -117,9 +142,20 @@ namespace BTL_HTPT
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@EmployeeID", SqlDbType.Int).Value = txtEmployeeID.Text;
-                if (connection.ExecuteNonQuery(command))
+                try
                 {
-                    MessageBox.Show("Can not delete Employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (connection.ExecuteQuery(command))
+                    {
+                        MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete Employee. Check the input values.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting Employee: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -1,314 +1,90 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+
 
 namespace BTL_HTPT
 {
     class SQLConnectionManager
     {
+        private SqlConnection connection;
+        private SqlConnectionStringBuilder connectionStringBuilder;
+        public SqlConnection Connection => connection;
+        public SqlConnectionStringBuilder ConnectionStringBuilder => connectionStringBuilder;
+
         public SQLConnectionManager(string connectionString)
         {
+            connectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
             connection = new SqlConnection(connectionString);
         }
 
-        private string serverName = "", databaseName = "", userID = "", password = "";
-
-        private SqlConnection connection;
-
-        public SqlConnection Connection => connection;
-
-        public string ConnectionString
+        public DataTable GetTable(SqlCommand cmd)
         {
-            get => connection.ConnectionString;
-
-            set
-            {
-                if (value != null)
-                {
-                    connection.ConnectionString = value;
-                }
-            }
-        }
-
-        public string ServerName
-        {
-            get => serverName;
-
-            set
-            {
-                if (value != null)
-                {
-                    serverName = value;
-                }
-            }
-        }
-
-        public string DatabaseName
-        {
-            get => databaseName;
-
-            set
-            {
-                if (value != null)
-                {
-                    databaseName = value;
-                }
-            }
-        }
-
-        public string UserID
-        {
-            get => userID;
-
-            set
-            {
-                userID = value;
-            }
-        }
-
-        public string Password
-        {
-            get => password;
-
-            set
-            {
-                if (value != null)
-                {
-                    password = value;
-                }
-            }
-        }
-
-        public bool Login()
-        {
-            bool check = true;
+            DataTable table = new DataTable();
             try
             {
-                if (connection != null)
+                if (cmd == null)
                 {
-                    connection.Dispose();
-                    connection = null;
+                   throw new ArgumentNullException(nameof(cmd), "SqlCommand cannot be null.");
                 }
-                connection = new SqlConnection
+
+                if (Connection == null)
                 {
-                    ConnectionString = $"Data Source={serverName};Initial Catalog={databaseName};User ID={userID};Password={password};"
-                };
-                connection.Open();
-                connection.Close();
+                    throw new InvalidOperationException("Connection is not initialized.");
+                }
+
+                cmd.Connection = Connection;
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    adapter.Fill(table);
+                }
             }
-            catch (SqlException e)
+            catch (Exception ex)
             {
-                MessageBox.Show("Class CSConnectSQL error: " + e.Message);
-                check = false;
+                Console.WriteLine($"Error in GetTable: {ex.Message}");
             }
-            return check;
+
+            return table;
         }
 
-        public bool Login(string serverName, string databaseName, string userID, string password)
+        public bool ExecuteQuery(SqlCommand cmd)
         {
-            bool check = true;
+            bool isSucess = false;
             try
             {
-                if (connection != null)
+                if (cmd == null)
                 {
-                    connection.Dispose();
+                    throw new ArgumentNullException(nameof(cmd), "SqlCommand cannot be null.");
                 }
-                connection = new SqlConnection
-                {
-                    ConnectionString = $"Data Source={serverName};Initial Catalog={databaseName};User ID={userID};Password={password};"
-                };
-                connection.Open();
-                connection.Close();
-            }
-            catch (SqlException e)
-            {
-                MessageBox.Show("Class CSConnectSQL error: " + e.Message);
-                check = false;
-            }
-            return check;
-        }
 
-        public bool Open()
-        {
-            bool check = true;
-            if (Connection != null && connection.State != ConnectionState.Open)
-            {
-                try
+                if (Connection == null)
                 {
-                    connection.Open();
+                    throw new InvalidOperationException("Connection is not initialized.");
                 }
-                catch (SqlException e)
-                {
-                    MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    check = false;
-                }
-            }
-            else
-            {
-                check = false;
-            }
-            return check;
-        }
 
-        public bool Close()
-        {
-            bool check = true;
-            if (connection != null && connection.State != ConnectionState.Open)
-            {
-                try
-                {
-                    connection.Close();
-                }
-                catch (SqlException e)
-                {
-                    MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    check = false;
-                }
-            }
-            return check;
-        }
-
-        public DataTable ExecuteQuery(string query)
-        {
-            DataTable dataTable = new DataTable();
-            if (connection != null)
-            {
-                try
-                {
-                    Open();
-                    using (SqlCommand command = new SqlCommand(query, Connection))
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                    Close();
-                }
-                catch (SqlException e)
-                {
-                    MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            return dataTable;
-        }
-
-        public DataTable ExecuteQuery(SqlCommand cmd)
-        {
-            DataTable dataTable = new DataTable();
-            if (connection != null)
-            {
-                try
-                {
-                    Open();
-                    cmd.Connection = connection;
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                    Close();
-                }
-                catch (SqlException e)
-                {
-                    MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            return dataTable;
-        }
-
-
-
-        public bool ExecuteNonQuery(string sql)
-        {
-            bool check = true;
-            try
-            {
-                Open();
-                using (SqlCommand command = new SqlCommand(sql, Connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-                Close();
-            }
-            catch (SqlException e)
-            {
-                MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                check = false;
-            }
-            return check;
-        }
-
-        public bool ExecuteNonQuery(SqlCommand cmd)
-        {
-            bool check = true;
-            try
-            {
-                Open();
-                cmd.Connection = connection;
+                Connection.Open();
+                cmd.Connection = Connection;
                 cmd.ExecuteNonQuery();
-                Close();
+                isSucess = true;
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                check = false;
+                Console.WriteLine($"SQL Server Error: {ex.Number}, Message: {ex.Message}");
             }
-            return check;
-        }
-
-        public object ExecuteScalar(string sql)
-        {
-            object res = null;
-            try
+            catch (Exception ex)
             {
-                Open();
-                using (SqlCommand command = new SqlCommand(sql, Connection))
+                Console.WriteLine($"Error executing query: {ex.Message}");
+            }
+            finally
+            {
+                if (Connection.State == System.Data.ConnectionState.Open)
                 {
-                    res = command.ExecuteScalar();
+                    Connection.Close();
                 }
-                Close();
             }
-            catch (SqlException e)
-            {
-                MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return res;
-        }
-        public object ExecuteScalar2(string storedProcedureName, SqlParameter[] parameters)
-        {
-            object res = null;
-            try
-            {
-                Open();
-                using (SqlCommand command = new SqlCommand(storedProcedureName, Connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddRange(parameters);
-                    res = command.ExecuteScalar();
-                }
-                Close();
-            }
-            catch (SqlException e)
-            {
-                MessageBox.Show("Class CSConnectSQL error: " + e.ToString(), "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return res;
-        }
-
-
-        public object ExecuteScalar(SqlCommand cmd)
-        {
-            object res;
-            try
-            {
-                Open();
-                res = cmd.ExecuteScalar();
-                Close();
-            }
-            catch (SqlException e)
-            {
-                MessageBox.Show("Class CSConnectSQL error: " + e.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                res = new object();
-            }
-            return res;
+            return isSucess;
         }
     }
 }
