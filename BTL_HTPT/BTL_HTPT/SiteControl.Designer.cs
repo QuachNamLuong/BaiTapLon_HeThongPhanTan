@@ -51,10 +51,14 @@ namespace BTL_HTPT
             this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
             this.lblSalary = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -77,14 +81,15 @@ namespace BTL_HTPT
             this.tableLayoutPanel1.Controls.Add(this.dtpBirthday, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblSalary, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtSalary, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 3, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(597, 483);
@@ -101,13 +106,13 @@ namespace BTL_HTPT
             this.tableLayoutPanel2.Controls.Add(this.lblActivityNotify, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 113);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 122);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(593, 367);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(593, 358);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // textBox6
@@ -117,12 +122,13 @@ namespace BTL_HTPT
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(171, 332);
+            this.textBox6.Size = new System.Drawing.Size(171, 323);
             this.textBox6.TabIndex = 12;
             // 
             // lblEmployyeeTable
             // 
             this.lblEmployyeeTable.AutoSize = true;
+            this.lblEmployyeeTable.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblEmployyeeTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEmployyeeTable.Location = new System.Drawing.Point(5, 2);
             this.lblEmployyeeTable.Name = "lblEmployyeeTable";
@@ -134,6 +140,7 @@ namespace BTL_HTPT
             // lblActivityNotify
             // 
             this.lblActivityNotify.AutoSize = true;
+            this.lblActivityNotify.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblActivityNotify.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblActivityNotify.Location = new System.Drawing.Point(417, 2);
             this.lblActivityNotify.Name = "lblActivityNotify";
@@ -149,8 +156,9 @@ namespace BTL_HTPT
             this.dataGridView1.Location = new System.Drawing.Point(5, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(406, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(406, 323);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // tableLayoutPanel3
             // 
@@ -167,11 +175,11 @@ namespace BTL_HTPT
             this.tableLayoutPanel3.Controls.Add(this.btnEditEployeeInfo, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnAddEmployee, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 78);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 86);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(593, 29);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(593, 30);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnPropagation
@@ -257,10 +265,10 @@ namespace BTL_HTPT
             this.lblPhoneNo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPhoneNo.Location = new System.Drawing.Point(3, 50);
             this.lblPhoneNo.Name = "lblPhoneNo";
-            this.lblPhoneNo.Size = new System.Drawing.Size(71, 25);
+            this.lblPhoneNo.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lblPhoneNo.Size = new System.Drawing.Size(71, 33);
             this.lblPhoneNo.TabIndex = 4;
             this.lblPhoneNo.Text = "Phone:";
-            this.lblPhoneNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblBirthday
             // 
@@ -288,7 +296,7 @@ namespace BTL_HTPT
             // 
             this.txtFullName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFullName.Location = new System.Drawing.Point(80, 28);
-            this.txtFullName.MaxLength = 100;
+            this.txtFullName.MaxLength = 50;
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.ReadOnly = true;
             this.txtFullName.Size = new System.Drawing.Size(187, 20);
@@ -329,12 +337,53 @@ namespace BTL_HTPT
             // 
             this.txtSalary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSalary.Location = new System.Drawing.Point(372, 28);
-            this.txtSalary.MaxLength = 100;
+            this.txtSalary.MaxLength = 15;
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.ReadOnly = true;
             this.txtSalary.Size = new System.Drawing.Size(224, 20);
             this.txtSalary.TabIndex = 7;
             this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSalary_KeyPress);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(3, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(136, 21);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(145, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(136, 21);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel4, 2);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.btnCancel, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnSave, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(312, 53);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(284, 27);
+            this.tableLayoutPanel4.TabIndex = 15;
             // 
             // SiteControl
             // 
@@ -351,6 +400,7 @@ namespace BTL_HTPT
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -379,5 +429,8 @@ namespace BTL_HTPT
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dtpBirthday;
         private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
     }
 }

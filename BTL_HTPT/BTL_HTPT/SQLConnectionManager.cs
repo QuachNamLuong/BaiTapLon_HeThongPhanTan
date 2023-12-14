@@ -17,6 +17,25 @@ namespace BTL_HTPT
         {
             connectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
             connection = new SqlConnection(connectionString);
+            try
+            {
+                if (connection == null)
+                {
+                    throw new ArgumentNullException();
+                }
+                connection.Open();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
 
         public DataTable GetTable(SqlCommand cmd)
