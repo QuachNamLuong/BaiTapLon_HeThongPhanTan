@@ -60,7 +60,6 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(229, 22);
             this.txt_id.TabIndex = 48;
-           // this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
             // 
             // txt_fullname
             // 
@@ -68,7 +67,6 @@
             this.txt_fullname.Name = "txt_fullname";
             this.txt_fullname.Size = new System.Drawing.Size(229, 22);
             this.txt_fullname.TabIndex = 47;
-            //this.txt_fullname.TextChanged += new System.EventHandler(this.txt_fullname_TextChanged);
             // 
             // txt_phoneNo
             // 
@@ -76,7 +74,6 @@
             this.txt_phoneNo.Name = "txt_phoneNo";
             this.txt_phoneNo.Size = new System.Drawing.Size(229, 22);
             this.txt_phoneNo.TabIndex = 46;
-            //this.txt_phoneNo.TextChanged += new System.EventHandler(this.txt_phoneNo_TextChanged);
             // 
             // date_birthday
             // 
@@ -84,7 +81,6 @@
             this.date_birthday.Name = "date_birthday";
             this.date_birthday.Size = new System.Drawing.Size(229, 22);
             this.date_birthday.TabIndex = 45;
-            //this.date_birthday.ValueChanged += new System.EventHandler(this.date_birthday_ValueChanged);
             // 
             // btn_reset
             // 
@@ -95,7 +91,6 @@
             this.btn_reset.TabIndex = 44;
             this.btn_reset.Text = "Reset";
             this.btn_reset.UseVisualStyleBackColor = true;
-            //this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_sua
             // 
@@ -136,7 +131,6 @@
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(229, 22);
             this.txt_address.TabIndex = 40;
-           // this.txt_address.TextChanged += new System.EventHandler(this.txt_address_TextChanged);
             // 
             // label6
             // 
@@ -214,7 +208,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1079, 285);
             this.dataGridView1.TabIndex = 31;
-            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btn_lam_moi
             // 
@@ -237,7 +231,6 @@
             this.rbtn_demo1.TabStop = true;
             this.rbtn_demo1.Text = "Demo1";
             this.rbtn_demo1.UseVisualStyleBackColor = true;
-            //this.rbtn_demo1.CheckedChanged += new System.EventHandler(this.rbtn_demo1_CheckedChanged);
             // 
             // rbtn_demo2
             // 
@@ -249,7 +242,6 @@
             this.rbtn_demo2.TabStop = true;
             this.rbtn_demo2.Text = "Demo2";
             this.rbtn_demo2.UseVisualStyleBackColor = true;
-            //this.rbtn_demo2.CheckedChanged += new System.EventHandler(this.rbtn_demo2_CheckedChanged);
             // 
             // rbtn_demo3
             // 
@@ -261,7 +253,6 @@
             this.rbtn_demo3.TabStop = true;
             this.rbtn_demo3.Text = "Demo3";
             this.rbtn_demo3.UseVisualStyleBackColor = true;
-            //this.rbtn_demo3.CheckedChanged += new System.EventHandler(this.rbtn_demo3_CheckedChanged);
             // 
             // rbtn_demo4
             // 
@@ -273,7 +264,6 @@
             this.rbtn_demo4.TabStop = true;
             this.rbtn_demo4.Text = "Demo4";
             this.rbtn_demo4.UseVisualStyleBackColor = true;
-            //this.rbtn_demo4.CheckedChanged += new System.EventHandler(this.rbtn_demo4_CheckedChanged);
             // 
             // rbtn_demo5
             // 
@@ -285,7 +275,6 @@
             this.rbtn_demo5.TabStop = true;
             this.rbtn_demo5.Text = "Demo5";
             this.rbtn_demo5.UseVisualStyleBackColor = true;
-            //this.rbtn_demo5.CheckedChanged += new System.EventHandler(this.rbtn_demo5_CheckedChanged);
             // 
             // Form2
             // 
@@ -317,7 +306,6 @@
             this.Controls.Add(this.btn_lam_moi);
             this.Name = "Form2";
             this.Text = "Form2";
-            //this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
