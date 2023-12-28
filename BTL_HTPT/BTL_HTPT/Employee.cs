@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 public class Employee
 {
@@ -61,6 +62,15 @@ public class Employee
     {
         get { return isActive; }
         set { isActive = value; }
+    }
+
+    public Employee()
+    {
+        EmployeeID = 1;
+        FullName = "null";
+        salary = 0.0;
+        HireDate = DateTime.MinValue;
+        IsActive = false;
     }
 
     public Employee(int employeeID, string fullName, double salary, DateTime hireDate, bool isActive)

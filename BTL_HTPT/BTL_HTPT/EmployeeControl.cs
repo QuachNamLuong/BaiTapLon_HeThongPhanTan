@@ -13,9 +13,15 @@ namespace BTL_HTPT
 
         public EmployeeControl(string connectionString)
         {
+            employee = new Employee();
             employeeDAO = new EmployeeDAO(connectionString);
             InitializeComponent();
             FirstLoad();
+        }
+
+        public EmployeeControl()
+        {
+            InitializeComponent();
         }
 
         private void SetEnableButton(bool flag)
@@ -31,7 +37,8 @@ namespace BTL_HTPT
         {
             txtFullName.ReadOnly = !flag;
             txtSalary.ReadOnly = !flag;
-            dtpBirthday.Enabled = flag;
+            dtpHireDay.Enabled = flag;
+            chkIsActivated.Enabled = flag;
         }
 
         private void ClearInput()
@@ -39,7 +46,7 @@ namespace BTL_HTPT
             txtEmployeeID.Clear();
             txtFullName.Clear();
             txtSalary.Clear();
-            dtpBirthday.ResetText();
+            dtpHireDay.ResetText();
         }
 
         private void FirstLoad()
@@ -77,14 +84,24 @@ namespace BTL_HTPT
         {
             txtEmployeeID.Text = dataGridView1[0, index].Value.ToString();
             txtFullName.Text = dataGridView1[1, index].Value.ToString();
-            dtpBirthday.Value = DateTime.Parse(dataGridView1[3, index].Value.ToString());
-            txtSalary.Text = dataGridView1[4, index].Value.ToString();
+            DateTime.TryParse(dataGridView1[3, index].Value.ToString(), out DateTime dt);
+            dtpHireDay.Value = dt.Date;
+            txtSalary.Text = dataGridView1[2, index].Value.ToString();
+            bool.TryParse(dataGridView1[4, index].Value.ToString(), out bool check);
+            chkIsActivated.Checked = check;
 
-            employee.EmployeeID = int.Parse(txtEmployeeID.Text);
+            GetDataInput();
+        }
+
+        private void GetDataInput()
+        {
+            int.TryParse(txtEmployeeID.Text, out int id);
+            employee.EmployeeID = id;
             employee.FullName = txtFullName.Text;
-            employee.HireDate = dtpBirthday.Value;
-            employee.Salary = double.Parse(txtSalary.Text);
-            employee.IsActive = false;
+            employee.HireDate = dtpHireDay.Value;
+            double.TryParse(txtSalary.Text, out double s);
+            employee.Salary = s;
+            employee.IsActive = chkIsActivated.Checked;
         }
 
         public void LoadEmployeeTable()
@@ -105,11 +122,14 @@ namespace BTL_HTPT
 
         private void BtnEditEployeeInfo_Click(object sender, EventArgs e)
         {
-            saveEmployeeType = SaveEmployeeType.UPDATE;
-            SetEnableInput(true);
-            SetEnableButton(false);
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
+            if (dataGridView1.Rows.Count > 1)
+            {
+                saveEmployeeType = SaveEmployeeType.UPDATE;
+                SetEnableInput(true);
+                SetEnableButton(false);
+                btnSave.Enabled = true;
+                btnCancel.Enabled = true;
+            }
         }
 
         private void BtnDeleteEmployyee_Click(object sender, EventArgs e)
@@ -139,13 +159,65 @@ namespace BTL_HTPT
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            GetDataInput();
+
             switch (saveEmployeeType)
             {
+                
                 case SaveEmployeeType.INSERT:
-                    txtEmployeeID.ReadOnly = true;
-                    employeeDAO.InsertEmployee(employee);
+                    bool check = false;
+                    if (txtEmployeeID.Text.Length != 0)
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Employee ID is empty!");
+                    }
+                    if (txtFullName.Text.Length != 0)
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Full name is empty!");
+                    }
+                    if (txtSalary.Text.Length != 0)
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Salary is empty!");
+                    }
+                    if (check)
+                    {
+                        employeeDAO.InsertEmployee(employee);
+                    }
                     break;
                 case SaveEmployeeType.UPDATE:
+                    check = false;
+                    if (txtFullName.Text.Length != 0)
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Full name is empty!");
+                    }
+                    if (txtSalary.Text.Length != 0)
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Salary is empty!");
+                    }
+                    if (check)
+                    {
+                        txtEmployeeID.ReadOnly = true;
+                        employeeDAO.InsertEmployee(employee);
+                    }
                     employeeDAO.UpdateEmployee(employee);
                     break;
                 case SaveEmployeeType.DELETE:
@@ -156,6 +228,7 @@ namespace BTL_HTPT
                 default:
                     break;
             }
+            txtEmployeeID.ReadOnly = true;
             SetEnableButton(true);
             SetEnableInput(false);
             LoadEmployeeTable();
@@ -185,6 +258,7 @@ namespace BTL_HTPT
         {
             saveEmployeeType = SaveEmployeeType.NONE;
             LoadEmployeeTable();
+            SetEnableInput(false);
             SetEnableButton(true);
             btnSave.Enabled = false;
             btnCancel.Enabled = false;

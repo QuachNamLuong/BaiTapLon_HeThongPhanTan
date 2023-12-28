@@ -298,7 +298,6 @@ C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
-C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.AssemblyReference.cache
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.MainForm.resources
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.Properties.Resources.resources
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.EmployeeControl.resources
@@ -307,3 +306,4 @@ C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.CopyComplete
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.exe
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.pdb
+C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.AssemblyReference.cache

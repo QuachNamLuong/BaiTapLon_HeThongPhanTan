@@ -16,7 +16,8 @@ namespace BTL_HTPT
         
         public MainForm()
         {
-            
+            connectionString5 = connectionString4 = connectionString3 = connectionString2 = connectionString1 = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=BTL;User ID=sa;Password=123;";
+            InitializeComponent();
         }
     }
 }
