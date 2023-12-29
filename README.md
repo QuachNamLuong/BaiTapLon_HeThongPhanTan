@@ -9,7 +9,8 @@ Viết ứng dụng lan truyền cập nhật từ CSDL đến Bản sao 1, bả
 
   # Form 2 là form chính
 
-![image](https://github.com/QuachNamLuong/BaiTapLon_HeThongPhanTan/assets/82036270/cc793b17-0380-4511-83e9-64ebcd2843f3)
+![image](https://github.com/QuachNamLuong/BaiTapLon_HeThongPhanTan/assets/82036270/d6d3103a-fbcf-4031-9967-11dcdd3d5b68)
+
 - Chọn server trước rồi mới nhấn nút "Làm mới", các server khác cũng có chức năng thêm, xoá, sửa như server 1. Copy file employee.sql (có mấy lệnh sp thêm, xoá, sửa mới demo được chức năng crud). Muốn demo server nào thì tạo thêm server trên SSMS rổi paste file sql dô rồi chạy
 
 
