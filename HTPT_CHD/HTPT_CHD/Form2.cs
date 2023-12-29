@@ -12,6 +12,7 @@ namespace HTPT_CHD
             "Data Source=CHD\\MAYCHU;Initial Catalog=EmployeeManagement;User ID=sa;Password=dienchau45",
             "Data Source=CHD\\TRAM1;Initial Catalog=EmployeeManagement;User ID=sa;Password=dienchau45",
             "Data Source=CHD\\TRAM2;Initial Catalog=EmployeeManagement;User ID=sa;Password=dienchau45",
+            "Your_Connection_String_3",
             "Your_Connection_String_4",
             "Your_Connection_String_5"
         };
@@ -20,6 +21,8 @@ namespace HTPT_CHD
         private DataTable sharedDataTable = new DataTable();
         private bool isDataLoaded = false;
         private bool hasRefreshedData = false;
+        static private String ConnTemp="";
+      
 
         public Form2()
         {
@@ -33,6 +36,7 @@ namespace HTPT_CHD
             dataGridView1.CellClick += dataGridView1_CellContentClick;
 
             // Đăng ký sự kiện CheckedChanged cho các radio buttons
+            rbtn_demo.CheckedChanged += rbtn_demo_CheckedChanged;
             rbtn_demo1.CheckedChanged += rbtn_demo_CheckedChanged;
             rbtn_demo2.CheckedChanged += rbtn_demo_CheckedChanged;
             rbtn_demo3.CheckedChanged += rbtn_demo_CheckedChanged;
@@ -289,6 +293,10 @@ namespace HTPT_CHD
             txt_address.Text = "";
             date_birthday.Value = DateTime.Now;
         }
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
 
         private void LoadData()
         {
@@ -317,30 +325,35 @@ namespace HTPT_CHD
         
         private void btn_lam_moi_Click(object sender, EventArgs e)
         {
-            if (rbtn_demo1.Checked)
+            if (rbtn_demo.Checked)
             {
                 LoadDataForSelectedDatabase(connectionStrings[0]);
                 Conn = connectionStrings[0];
             }
-            else if (rbtn_demo2.Checked)
+            else if (rbtn_demo1.Checked)
             {
                 LoadDataForSelectedDatabase(connectionStrings[1]);
                 Conn = connectionStrings[1];
             }
-            else if (rbtn_demo3.Checked)
+            else if (rbtn_demo2.Checked)
             {
                 LoadDataForSelectedDatabase(connectionStrings[2]);
                 Conn = connectionStrings[2];
             }
-            else if (rbtn_demo4.Checked)
+            else if (rbtn_demo3.Checked)
             {
                 LoadDataForSelectedDatabase(connectionStrings[3]);
                 Conn = connectionStrings[3];
             }
-            else if (rbtn_demo5.Checked)
+            else if (rbtn_demo4.Checked)
             {
                 LoadDataForSelectedDatabase(connectionStrings[4]);
                 Conn = connectionStrings[4];
+            }
+            else if (rbtn_demo5.Checked)
+            {
+                LoadDataForSelectedDatabase(connectionStrings[4]);
+                Conn = connectionStrings[5];
             }
             else
             {
@@ -349,146 +362,79 @@ namespace HTPT_CHD
             //LoadData();
         }
 
+        
         private void btn_day_du_lieu_Click(object sender, EventArgs e)
         {
-            if (rbtn_demo1.Checked)
+            
+            string Conn = string.Empty;
+            string ConnTemp = string.Empty;
+
+            if (rbtn_demo.Checked)
             {
-                PushDataDownAndMerge(connectionStrings[0]);
+                Conn = connectionStrings[0];
+                ConnTemp = connectionStrings[1];
+            }
+            else if (rbtn_demo1.Checked)
+            {
+                Conn = connectionStrings[1];
+                ConnTemp = connectionStrings[2];
+            }
+            else if (rbtn_demo2.Checked)
+            {
+                ConnTemp = connectionStrings[2];
+                Conn = connectionStrings[3];
+            }
+            else if (rbtn_demo3.Checked)
+            {
+                ConnTemp = connectionStrings[3];
+                Conn = connectionStrings[4];
+            }
+            else if (rbtn_demo4.Checked)
+            {
+                ConnTemp = connectionStrings[4];
+                Conn = connectionStrings[5];
+            }
+            else if (rbtn_demo5.Checked)
+            {
+                ConnTemp = connectionStrings[5];
+                Conn = connectionStrings[5];
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn demo 1 để đẩy dữ liệu xuống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn cơ sở dữ liệu trước khi làm mới.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return; // Thêm return để ngăn chương trình tiếp tục khi không có cơ sở dữ liệu được chọn.
             }
-            PushDataDown();
-        }
 
-        private void PushDataDown()
-        {
-            try
+            using (SqlConnection connectionSource = new SqlConnection(Conn))
+            using (SqlConnection connectionDestination = new SqlConnection(ConnTemp))
             {
-                if (!hasRefreshedData)
+                connectionSource.Open();
+                connectionDestination.Open();
+
+                using (SqlCommand command = new SqlCommand("SP_HienThiDanhSachNhanVien", connectionSource))
                 {
-                    if (dataGridView1.Rows.Count > 0)
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
-                        DataTable clonedTable = sharedDataTable.Clone();
-                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Xóa dữ liệu cũ trước khi đổ dữ liệu mới
+                        using (SqlCommand deleteCommand = new SqlCommand("DELETE FROM Employee", connectionDestination))
                         {
-                            DataRow newRow = clonedTable.NewRow();
-                            foreach (DataGridViewCell cell in row.Cells)
-                            {
-                                if (cell.Value != null)
-                                {
-                                    if (cell.OwningColumn.Name == "Birthday" && cell.Value.GetType() == typeof(DateTime))
-                                    {
-                                        newRow[cell.ColumnIndex] = cell.Value;
-                                    }
-                                    else
-                                    {
-                                        newRow[cell.ColumnIndex] = cell.Value;
-                                    }
-                                }
-                                else
-                                {
-                                    newRow[cell.ColumnIndex] = DBNull.Value;
-                                }
-                            }
-                            clonedTable.Rows.Add(newRow);
+                            deleteCommand.ExecuteNonQuery();
                         }
 
-                        dataGridView1.DataSource = clonedTable;
-                        hasRefreshedData = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không có dữ liệu để đẩy xuống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Dữ liệu đã được đẩy xuống trước đó.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi đẩy dữ liệu xuống: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private void PushDataDownAndMerge(string sourceConnectionString)
-        {
-            try
-            {
-                using (SqlConnection sourceConnection = new SqlConnection(sourceConnectionString))
-                using (SqlCommand sourceCommand = new SqlCommand("SP_HienThiDanhSachNhanVien", sourceConnection))
-                {
-                    sourceCommand.CommandType = CommandType.StoredProcedure;
-                    SqlDataAdapter sourceAdapter = new SqlDataAdapter(sourceCommand);
-                    DataTable sourceDataTable = new DataTable();
-                    sourceAdapter.Fill(sourceDataTable);
-
-                    // Đặt kết nối và lệnh cho các cơ sở dữ liệu đích (demo 2, 3, 4, 5)
-                    for (int i = 1; i <= 4; i++)
-                    {
-                        string destinationConnectionString = connectionStrings[i];
-                        using (SqlConnection destinationConnection = new SqlConnection(destinationConnectionString))
-                        using (SqlCommand destinationCommand = new SqlCommand("SP_HienThiDanhSachNhanVien", destinationConnection))
+                        // Đổ dữ liệu mới vào cơ sở dữ liệu đích
+                        using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connectionDestination))
                         {
-                            destinationCommand.CommandType = CommandType.StoredProcedure;
-                            SqlDataAdapter destinationAdapter = new SqlDataAdapter(destinationCommand);
-                            DataTable destinationDataTable = new DataTable();
-                            destinationAdapter.Fill(destinationDataTable);
-
-                            // Gộp dữ liệu từ nguồn vào đích
-                            MergeData(sourceDataTable, destinationDataTable);
-
-                            // Lưu dữ liệu gộp vào cơ sở dữ liệu đích
-                            SaveData(destinationConnection, destinationCommand, destinationAdapter, destinationDataTable);
+                            bulkCopy.DestinationTableName = "Employee";
+                            bulkCopy.WriteToServer(dataTable);
                         }
                     }
                 }
-
-                MessageBox.Show("Đã đẩy và gộp dữ liệu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi đẩy và gộp dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void MergeData(DataTable sourceDataTable, DataTable destinationDataTable)
-        {
-            // Kiểm tra nếu có dữ liệu từ nguồn
-            if (sourceDataTable.Rows.Count > 0)
-            {
-                // Tìm max ID hiện tại trong cơ sở dữ liệu đích
-                int maxId = destinationDataTable.AsEnumerable()
-                    .Max(row => int.TryParse(row.Field<string>("EmployeeID"), out int id) ? id : 0);
-
-                // Gán maxId+1 cho các dòng dữ liệu từ nguồn
-                foreach (DataRow row in sourceDataTable.Rows)
-                {
-                    maxId++;
-                    row["EmployeeID"] = maxId.ToString();
-                }
-
-                // Gộp dữ liệu từ nguồn vào đích
-                destinationDataTable.Merge(sourceDataTable, true, MissingSchemaAction.Add);
-            }
-        }
-
-        private void SaveData(SqlConnection connection, SqlCommand command, SqlDataAdapter adapter, DataTable dataTable)
-        {
-            // Xóa dữ liệu cũ trong cơ sở dữ liệu đích
-            command.CommandText = "DELETE FROM Employee"; // Thay thế "TableName" bằng tên bảng của bạn
-            connection.Open();
-            command.ExecuteNonQuery();
-
-            // Thêm dữ liệu mới vào cơ sở dữ liệu đích
-            command.CommandText = "INSERT INTO Employee(EmployeeID, FullName, PhoneNo, Address, Birthday) VALUES (@Id, @Ten, @PhoneNo, @Address, @Birthday)";
-            adapter.InsertCommand = command;
-            adapter.Update(dataTable);
-            connection.Close();
         }
 
 

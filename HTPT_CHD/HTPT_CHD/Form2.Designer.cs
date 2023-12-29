@@ -51,50 +51,52 @@
             this.rbtn_demo3 = new System.Windows.Forms.RadioButton();
             this.rbtn_demo4 = new System.Windows.Forms.RadioButton();
             this.rbtn_demo5 = new System.Windows.Forms.RadioButton();
+            this.rbtn_demo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_id
             // 
-            this.txt_id.Location = new System.Drawing.Point(252, 73);
+            this.txt_id.Location = new System.Drawing.Point(349, 74);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(229, 22);
             this.txt_id.TabIndex = 48;
             // 
             // txt_fullname
             // 
-            this.txt_fullname.Location = new System.Drawing.Point(252, 121);
+            this.txt_fullname.Location = new System.Drawing.Point(349, 122);
             this.txt_fullname.Name = "txt_fullname";
             this.txt_fullname.Size = new System.Drawing.Size(229, 22);
             this.txt_fullname.TabIndex = 47;
             // 
             // txt_phoneNo
             // 
-            this.txt_phoneNo.Location = new System.Drawing.Point(252, 175);
+            this.txt_phoneNo.Location = new System.Drawing.Point(349, 176);
             this.txt_phoneNo.Name = "txt_phoneNo";
             this.txt_phoneNo.Size = new System.Drawing.Size(229, 22);
             this.txt_phoneNo.TabIndex = 46;
             // 
             // date_birthday
             // 
-            this.date_birthday.Location = new System.Drawing.Point(743, 68);
+            this.date_birthday.Location = new System.Drawing.Point(840, 69);
             this.date_birthday.Name = "date_birthday";
             this.date_birthday.Size = new System.Drawing.Size(229, 22);
             this.date_birthday.TabIndex = 45;
             // 
             // btn_reset
             // 
-            this.btn_reset.Location = new System.Drawing.Point(865, 249);
+            this.btn_reset.Location = new System.Drawing.Point(973, 252);
             this.btn_reset.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(96, 52);
             this.btn_reset.TabIndex = 44;
             this.btn_reset.Text = "Reset";
             this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(642, 249);
+            this.btn_sua.Location = new System.Drawing.Point(750, 252);
             this.btn_sua.Margin = new System.Windows.Forms.Padding(4);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(96, 52);
@@ -105,7 +107,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(385, 249);
+            this.btn_xoa.Location = new System.Drawing.Point(493, 252);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(4);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(96, 52);
@@ -116,7 +118,7 @@
             // 
             // btn_them
             // 
-            this.btn_them.Location = new System.Drawing.Point(149, 249);
+            this.btn_them.Location = new System.Drawing.Point(257, 252);
             this.btn_them.Margin = new System.Windows.Forms.Padding(4);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(96, 52);
@@ -127,7 +129,7 @@
             // 
             // txt_address
             // 
-            this.txt_address.Location = new System.Drawing.Point(743, 124);
+            this.txt_address.Location = new System.Drawing.Point(840, 125);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(229, 22);
             this.txt_address.TabIndex = 40;
@@ -135,7 +137,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(639, 127);
+            this.label6.Location = new System.Drawing.Point(736, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 39;
@@ -144,7 +146,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(639, 76);
+            this.label7.Location = new System.Drawing.Point(736, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 38;
@@ -153,7 +155,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(146, 181);
+            this.label8.Location = new System.Drawing.Point(243, 182);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 16);
             this.label8.TabIndex = 37;
@@ -162,7 +164,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(146, 127);
+            this.label9.Location = new System.Drawing.Point(243, 128);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 16);
             this.label9.TabIndex = 36;
@@ -171,7 +173,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(146, 76);
+            this.label10.Location = new System.Drawing.Point(243, 77);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 16);
             this.label10.TabIndex = 35;
@@ -180,7 +182,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1079, 364);
+            this.label1.Location = new System.Drawing.Point(1270, 364);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 16);
             this.label1.TabIndex = 34;
@@ -206,13 +208,13 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1079, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(1270, 285);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btn_lam_moi
             // 
-            this.btn_lam_moi.Location = new System.Drawing.Point(978, 299);
+            this.btn_lam_moi.Location = new System.Drawing.Point(1169, 308);
             this.btn_lam_moi.Margin = new System.Windows.Forms.Padding(4);
             this.btn_lam_moi.Name = "btn_lam_moi";
             this.btn_lam_moi.Size = new System.Drawing.Size(144, 52);
@@ -224,7 +226,7 @@
             // rbtn_demo1
             // 
             this.rbtn_demo1.AutoSize = true;
-            this.rbtn_demo1.Location = new System.Drawing.Point(43, 22);
+            this.rbtn_demo1.Location = new System.Drawing.Point(307, 21);
             this.rbtn_demo1.Name = "rbtn_demo1";
             this.rbtn_demo1.Size = new System.Drawing.Size(72, 20);
             this.rbtn_demo1.TabIndex = 49;
@@ -235,7 +237,7 @@
             // rbtn_demo2
             // 
             this.rbtn_demo2.AutoSize = true;
-            this.rbtn_demo2.Location = new System.Drawing.Point(252, 22);
+            this.rbtn_demo2.Location = new System.Drawing.Point(516, 21);
             this.rbtn_demo2.Name = "rbtn_demo2";
             this.rbtn_demo2.Size = new System.Drawing.Size(72, 20);
             this.rbtn_demo2.TabIndex = 50;
@@ -246,7 +248,7 @@
             // rbtn_demo3
             // 
             this.rbtn_demo3.AutoSize = true;
-            this.rbtn_demo3.Location = new System.Drawing.Point(476, 22);
+            this.rbtn_demo3.Location = new System.Drawing.Point(743, 21);
             this.rbtn_demo3.Name = "rbtn_demo3";
             this.rbtn_demo3.Size = new System.Drawing.Size(72, 20);
             this.rbtn_demo3.TabIndex = 51;
@@ -257,7 +259,7 @@
             // rbtn_demo4
             // 
             this.rbtn_demo4.AutoSize = true;
-            this.rbtn_demo4.Location = new System.Drawing.Point(693, 22);
+            this.rbtn_demo4.Location = new System.Drawing.Point(973, 21);
             this.rbtn_demo4.Name = "rbtn_demo4";
             this.rbtn_demo4.Size = new System.Drawing.Size(72, 20);
             this.rbtn_demo4.TabIndex = 52;
@@ -268,7 +270,7 @@
             // rbtn_demo5
             // 
             this.rbtn_demo5.AutoSize = true;
-            this.rbtn_demo5.Location = new System.Drawing.Point(905, 22);
+            this.rbtn_demo5.Location = new System.Drawing.Point(1169, 21);
             this.rbtn_demo5.Name = "rbtn_demo5";
             this.rbtn_demo5.Size = new System.Drawing.Size(72, 20);
             this.rbtn_demo5.TabIndex = 53;
@@ -276,11 +278,24 @@
             this.rbtn_demo5.Text = "Demo5";
             this.rbtn_demo5.UseVisualStyleBackColor = true;
             // 
+            // rbtn_demo
+            // 
+            this.rbtn_demo.AutoSize = true;
+            this.rbtn_demo.Location = new System.Drawing.Point(121, 21);
+            this.rbtn_demo.Name = "rbtn_demo";
+            this.rbtn_demo.Size = new System.Drawing.Size(65, 20);
+            this.rbtn_demo.TabIndex = 54;
+            this.rbtn_demo.TabStop = true;
+            this.rbtn_demo.Text = "Demo";
+            this.rbtn_demo.UseVisualStyleBackColor = true;
+            //this.rbtn_demo.CheckedChanged += new System.EventHandler(this.rbtn_demo_CheckedChanged_1);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 682);
+            this.ClientSize = new System.Drawing.Size(1352, 682);
+            this.Controls.Add(this.rbtn_demo);
             this.Controls.Add(this.rbtn_demo5);
             this.Controls.Add(this.rbtn_demo4);
             this.Controls.Add(this.rbtn_demo3);
@@ -337,5 +352,6 @@
         private System.Windows.Forms.RadioButton rbtn_demo3;
         private System.Windows.Forms.RadioButton rbtn_demo4;
         private System.Windows.Forms.RadioButton rbtn_demo5;
+        private System.Windows.Forms.RadioButton rbtn_demo;
     }
 }
