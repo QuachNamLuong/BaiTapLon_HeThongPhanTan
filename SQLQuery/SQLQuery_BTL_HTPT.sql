@@ -1,46 +1,62 @@
+-- Make sure you are using database master
 USE master
 GO
 
-CREATE DATABASE EmployeeManagement
+-- Create database
+CREATE DATABASE ProductManagementDB
 GO
 
-USE EmployeeManagement
+-- Switch to database ProductManagementDB
+USE ProductManagementDB
 GO
 
-CREATE TABLE Employee(
-	EmployeeID INT,
-	FullName NVARCHAR(100) NOT NULL,
-	PhoneNo CHAR(15) UNIQUE NOT NULL CHECK (PhoneNumber LIKE '[0-9]%' AND LEN(PhoneNumber) BETWEEN 10 AND 15),
-	Birthday DATE NOT NULL CHECK (Birthday >= '1900-01-01' AND Birthday <= GETDATE()),
-	Salary DECIMAL(10, 2) NOT NULL CHECK (Salary > 0),
-	CONSTRAINT PK_Employee PRIMARY KEY (EmployeeID)
-)
+-- Create table Product
+CREATE TABLE Product (
+    ProductID INT PRIMARY KEY,
+    ProductName NVARCHAR(200) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    ManufactureDate DATE NOT NULL,
+    IsAvailable BIT NOt NULL
+);
 GO
 
-CREATE PROCEDURE SP_DeleteEmployee
-    @EmployeeID INT
+-- Create store procedure for insert a record to table Product
+CREATE PROCEDURE InsertProduct
+    @ProductName NVARCHAR(100),
+    @Price DECIMAL(10, 2),
+    @ManufactureDate DATE,
+    @IsAvailable BIT
 AS
 BEGIN
-    DELETE FROM Employee
-    WHERE EmployeeID = @EmployeeID;
-END
+    INSERT INTO Product (ProductName, Price, ManufactureDate, IsAvailable)
+    VALUES (@ProductName, @Price, @ManufactureDate, @IsAvailable);
+END;
 GO
 
-CREATE PROCEDURE SP_UpdateEmployee
-    @EmployeeID INT
-    @FullName NVARCHAR(100),
-    @PhoneNo CHAR(15),
-    @Birthday DATE,
-    @Salary DECIMAL(10, 2),
+-- Create store procedure for update a record to table Product
+CREATE PROCEDURE UpdateProduct
+    @ProductID INT,
+    @ProductName NVARCHAR(100),
+    @Price DECIMAL(10, 2),
+    @ManufactureDate DATE,
+    @IsAvailable BIT
 AS
 BEGIN
-    UPDATE Employee
-    SET
-	FullName = CASE WHEN @FullName IS NOT NULL THEN @FullName ELSE FullName END,
-	PhoneNo = CASE WHEN @PhoneNo IS NOT NULL THEN @PhoneNo ELSE PhoneNo END,
-	Birthday = CASE WHEN @Birthday IS NOT NULL THEN @Birthday ELSE Birthday END,
-	Salary = CASE WHEN @Salary IS NOT NULL THEN @Salary ELSE Salary END,
-    WHERE EmployeeID = @EmployeeID;
-END
+    UPDATE Product
+    SET ProductName = @ProductName,
+        Price = @Price,
+        ManufactureDate = @ManufactureDate,
+        IsAvailable = @IsAvailable
+    WHERE ProductID = @ProductID;
+END;
 GO
 
+-- Create store procedure for delete a record to table Product
+CREATE PROCEDURE DeleteProduct
+    @ProductID INT
+AS
+BEGIN
+    DELETE FROM Product
+    WHERE ProductID = @ProductID;
+END;
+GO
