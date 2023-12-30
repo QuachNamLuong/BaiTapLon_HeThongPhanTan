@@ -22,14 +22,15 @@ GO
 
 -- Create store procedure for insert a record to table Product
 CREATE PROCEDURE SP_Insert_Product
+    @ProductID INT,
     @ProductName NVARCHAR(100),
     @Price DECIMAL(10, 2),
     @ManufactureDate DATE,
     @IsAvailable BIT
 AS
 BEGIN
-    INSERT INTO Product (ProductName, Price, ManufactureDate, IsAvailable)
-    VALUES (@ProductName, @Price, @ManufactureDate, @IsAvailable);
+    INSERT INTO Product (ProductID, ProductName, Price, ManufactureDate, IsAvailable)
+    VALUES (@ProductID, @ProductName, @Price, @ManufactureDate, @IsAvailable);
 END;
 GO
 
