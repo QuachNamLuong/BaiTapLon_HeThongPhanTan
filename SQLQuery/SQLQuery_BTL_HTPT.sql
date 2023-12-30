@@ -21,7 +21,7 @@ CREATE TABLE Product (
 GO
 
 -- Create store procedure for insert a record to table Product
-CREATE PROCEDURE InsertProduct
+CREATE PROCEDURE SP_Insert_Product
     @ProductName NVARCHAR(100),
     @Price DECIMAL(10, 2),
     @ManufactureDate DATE,
@@ -34,7 +34,7 @@ END;
 GO
 
 -- Create store procedure for update a record to table Product
-CREATE PROCEDURE UpdateProduct
+CREATE PROCEDURE SP_Update_Product
     @ProductID INT,
     @ProductName NVARCHAR(100),
     @Price DECIMAL(10, 2),
@@ -52,7 +52,7 @@ END;
 GO
 
 -- Create store procedure for delete a record to table Product
-CREATE PROCEDURE DeleteProduct
+CREATE PROCEDURE SP_Delete_Product
     @ProductID INT
 AS
 BEGIN
