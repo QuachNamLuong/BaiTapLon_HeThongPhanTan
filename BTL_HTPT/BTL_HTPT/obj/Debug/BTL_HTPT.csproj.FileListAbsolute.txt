@@ -320,7 +320,7 @@ C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.exe
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.pdb
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.DemoForm3.resources
-C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.DemoForm4.resources
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.AssemblyReference.cache
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.Demo6SiteForm.resources
 C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.DemoForm1.resources
+C:\Users\LuongQuach\Source\Repos\QuachNamLuong\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.DemoForm2.resources

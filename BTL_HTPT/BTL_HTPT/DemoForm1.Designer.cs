@@ -63,6 +63,7 @@ namespace BTL_HTPT
             // 
             // productControl1
             // 
+            this.productControl1.ConnectionStringNext = null;
             this.productControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productControl1.Location = new System.Drawing.Point(3, 3);
             this.productControl1.Name = "productControl1";
@@ -82,19 +83,20 @@ namespace BTL_HTPT
             // 
             // productControl2
             // 
+            this.productControl2.ConnectionStringNext = null;
             this.productControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productControl2.Location = new System.Drawing.Point(3, 3);
             this.productControl2.Name = "productControl2";
             this.productControl2.Size = new System.Drawing.Size(786, 418);
             this.productControl2.TabIndex = 0;
             // 
-            // DemoForm2
+            // DemoForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Name = "DemoForm2";
+            this.Name = "DemoForm1";
             this.Text = "Demo2";
             this.Load += new System.EventHandler(this.DemoForm2_Load);
             this.tabControl1.ResumeLayout(false);

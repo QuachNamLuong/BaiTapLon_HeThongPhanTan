@@ -21,8 +21,8 @@ namespace BTL_HTPT
 
         private void DemoForm2_Load(object sender, EventArgs e)
         {
-            productControl1.ConnectionString = "asd";
-            productControl2.ConnectionString = "asds";
+            productControl1.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
+            productControl2.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl1.ConnectionStringNext = productControl2.ConnectionString;
             productControl1.LoadData();
         }

@@ -51,14 +51,17 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.propagateButton = new System.Windows.Forms.Button();
             this.reloadButton = new System.Windows.Forms.Button();
-            this.notifyTextBox = new System.Windows.Forms.TextBox();
             this.notifyLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.notifyTextBox = new System.Windows.Forms.TextBox();
+            this.buttonClearNotify = new System.Windows.Forms.Button();
             this.mainTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTableLayoutPanel
@@ -87,9 +90,9 @@
             this.mainTableLayoutPanel.Controls.Add(this.deleteButton, 2, 3);
             this.mainTableLayoutPanel.Controls.Add(this.propagateButton, 3, 3);
             this.mainTableLayoutPanel.Controls.Add(this.reloadButton, 4, 3);
-            this.mainTableLayoutPanel.Controls.Add(this.notifyTextBox, 5, 5);
             this.mainTableLayoutPanel.Controls.Add(this.notifyLabel, 5, 4);
             this.mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 4, 2);
+            this.mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel2, 5, 5);
             this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
@@ -100,6 +103,7 @@
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.mainTableLayoutPanel.Size = new System.Drawing.Size(725, 516);
             this.mainTableLayoutPanel.TabIndex = 0;
             // 
@@ -231,7 +235,6 @@
             this.mainTableLayoutPanel.SetColumnSpan(this.productNameTextBox, 2);
             this.productNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productNameTextBox.Location = new System.Drawing.Point(119, 33);
-            this.productNameTextBox.MaxLength = 100;
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.ReadOnly = true;
             this.productNameTextBox.Size = new System.Drawing.Size(226, 20);
@@ -242,7 +245,6 @@
             this.mainTableLayoutPanel.SetColumnSpan(this.priceTextBox, 2);
             this.priceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.priceTextBox.Location = new System.Drawing.Point(119, 63);
-            this.priceTextBox.MaxLength = 13;
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.ReadOnly = true;
             this.priceTextBox.Size = new System.Drawing.Size(226, 20);
@@ -353,16 +355,6 @@
             this.reloadButton.UseVisualStyleBackColor = true;
             this.reloadButton.Click += new System.EventHandler(this.reloadButton_Click);
             // 
-            // notifyTextBox
-            // 
-            this.notifyTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notifyTextBox.Location = new System.Drawing.Point(547, 153);
-            this.notifyTextBox.Multiline = true;
-            this.notifyTextBox.Name = "notifyTextBox";
-            this.notifyTextBox.ReadOnly = true;
-            this.notifyTextBox.Size = new System.Drawing.Size(175, 360);
-            this.notifyTextBox.TabIndex = 14;
-            // 
             // notifyLabel
             // 
             this.notifyLabel.AutoSize = true;
@@ -416,6 +408,44 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.notifyTextBox, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.buttonClearNotify, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(547, 153);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.94444F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.055555F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(175, 360);
+            this.tableLayoutPanel2.TabIndex = 29;
+            // 
+            // notifyTextBox
+            // 
+            this.notifyTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notifyTextBox.Enabled = false;
+            this.notifyTextBox.Location = new System.Drawing.Point(3, 3);
+            this.notifyTextBox.Multiline = true;
+            this.notifyTextBox.Name = "notifyTextBox";
+            this.notifyTextBox.ReadOnly = true;
+            this.notifyTextBox.Size = new System.Drawing.Size(169, 324);
+            this.notifyTextBox.TabIndex = 15;
+            // 
+            // buttonClearNotify
+            // 
+            this.buttonClearNotify.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonClearNotify.Location = new System.Drawing.Point(3, 333);
+            this.buttonClearNotify.Name = "buttonClearNotify";
+            this.buttonClearNotify.Size = new System.Drawing.Size(169, 24);
+            this.buttonClearNotify.TabIndex = 16;
+            this.buttonClearNotify.Text = "Xóa thông báo";
+            this.buttonClearNotify.UseVisualStyleBackColor = true;
+            this.buttonClearNotify.Click += new System.EventHandler(this.buttonClearNotify_Click);
+            // 
             // ProductControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,6 +457,8 @@
             this.mainTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -441,7 +473,6 @@
         private System.Windows.Forms.Label isAvailableLabel;
         private System.Windows.Forms.Label tableProductLabel;
         private System.Windows.Forms.Label notifyLabel;
-        private System.Windows.Forms.TextBox notifyTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox productIDTextBox;
         private System.Windows.Forms.DateTimePicker manufactureDateDateTimePicker;
@@ -461,5 +492,8 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.TextBox productNameTextBox;
         private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TextBox notifyTextBox;
+        private System.Windows.Forms.Button buttonClearNotify;
     }
 }

@@ -47,7 +47,7 @@ namespace BTL_HTPT
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 450);
+            this.tabControl1.Size = new System.Drawing.Size(784, 561);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -56,7 +56,7 @@ namespace BTL_HTPT
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 424);
+            this.tabPage1.Size = new System.Drawing.Size(776, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -74,27 +74,29 @@ namespace BTL_HTPT
             // 
             // productControl1
             // 
+            this.productControl1.ConnectionStringNext = null;
             this.productControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productControl1.Location = new System.Drawing.Point(3, 3);
             this.productControl1.Name = "productControl1";
-            this.productControl1.Size = new System.Drawing.Size(786, 418);
+            this.productControl1.Size = new System.Drawing.Size(770, 529);
             this.productControl1.TabIndex = 0;
             // 
             // productControl2
             // 
+            this.productControl2.ConnectionStringNext = null;
             this.productControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productControl2.Location = new System.Drawing.Point(3, 3);
             this.productControl2.Name = "productControl2";
             this.productControl2.Size = new System.Drawing.Size(786, 418);
             this.productControl2.TabIndex = 0;
             // 
-            // DemoForm4
+            // DemoForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabControl1);
-            this.Name = "DemoForm4";
+            this.Name = "DemoForm2";
             this.Text = "DemoForm4";
             this.Load += new System.EventHandler(this.DemoForm4_Load);
             this.tabControl1.ResumeLayout(false);

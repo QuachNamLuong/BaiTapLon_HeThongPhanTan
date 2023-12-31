@@ -156,26 +156,66 @@ namespace BTL_HTPT
 
         }
 
+        private bool CheckInput()
+        {
+            if (productIDTextBox.Text.Length == 0)
+            {
+                return false;
+            }
+            if (productIDTextBox.Text.Length == 0)
+            {
+                return false;
+            }
+            if (productIDTextBox.Text.Length == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             GetInfoProduct();
-            switch(saveType)
+            
+            switch (saveType)
             {
                 case SaveType.INSERT:
-                    if (productDAO.InsertProduct(product))
+                    if (CheckInput())
                     {
-                        updateButton.Enabled = true;
+                        MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
+                    }
+                    else if (productDAO.InsertProduct(product))
+                    {
+                        MessageBox.Show("Không thể thêm sản phẩm");
+                    }
+                    else
+                    {
+                        notifyTextBox.Text = "Thêm sản phẩm thành công\n";
                     }
                     break;
                 case SaveType.UPDATE:
-                    productDAO.UpdateProduct(product);
+                    if (productDAO.UpdateProduct(product))
+                    {
+                        MessageBox.Show("Không thể cập nhật sản phẩm");
+                    }
+                    else
+                    {
+                        notifyTextBox.Text = "Cập nhật sản phẩm thành công\n";
+                    }
                     break;
                 case SaveType.DELETE:
                     if (dataGridView1.Rows.Count == 0)
                     {
                         ClearInput();
                     }
-                    productDAO.DeleteProduct(product);
+                    if (productDAO.DeleteProduct(product))
+                    {
+                        MessageBox.Show("Không thể xóa nhật sản phẩm");
+                    }
+                    else
+                    {
+                        notifyTextBox.Text = "Xóa sản phẩm thành công\n";
+                    }
                     break;
             }
             saveType = SaveType.NONE;
@@ -337,6 +377,11 @@ namespace BTL_HTPT
             {
                 e.Handled = true;
             }
+        }
+
+        private void buttonClearNotify_Click(object sender, EventArgs e)
+        {
+            notifyTextBox.Clear();
         }
     }
 }

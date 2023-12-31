@@ -22,7 +22,7 @@ namespace BTL_HTPT
 
         private void DemoForm3_Load(object sender, EventArgs e)
         {
-            productControl1.ConnectionString = "sdas";
+            productControl1.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl1.LoadData();
         }
     }
