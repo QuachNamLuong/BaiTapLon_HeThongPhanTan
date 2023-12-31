@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace BTL_HTPT
 {
-    public partial class Demo6SiteForm1 : Form
+    public partial class Demo6SiteForm : Form
     {
-        public Demo6SiteForm1()
+        public Demo6SiteForm()
         {
             InitializeComponent();
             productControl2.SetVisibleButton(false);
@@ -21,19 +21,14 @@ namespace BTL_HTPT
             productControl1.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl2.ConnectionString = "Data Source=DESKTOP-7B6MP5S\\MSSQLSERVER1;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl1.ConnectionStringNext = productControl2.ConnectionString;
-
             productControl3.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl2.ConnectionStringNext = productControl3.ConnectionString;
-
             productControl4.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl3.ConnectionStringNext = productControl4.ConnectionString;
-
             productControl5.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl4.ConnectionStringNext = productControl5.ConnectionString;
-
             productControl6.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             productControl5.ConnectionStringNext = productControl6.ConnectionString;
-
             productControl1.LoadData();
         }
 

@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Dotmim.Sync;
+using Dotmim.Sync.SqlServer;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
-using Dotmim.Sync.SqlServer;
-using Dotmim.Sync;
 
 namespace BTL_HTPT
 {
-    public partial class ProductControl : UserControl
+    public partial class ControlProduct : UserControl
     {
         private readonly Product product;
         private ProductDAO productDAO;
-        private enum SaveType {INSERT, UPDATE, DELETE, NONE};
+        private enum SaveType { INSERT, UPDATE, DELETE, NONE };
         private SaveType saveType;
         private int selectedRow;
         private string connectionStringNext;
@@ -48,7 +42,7 @@ namespace BTL_HTPT
             }
         }
 
-        public ProductControl()
+        public ControlProduct()
         {
             InitializeComponent();
             product = new Product();
@@ -58,17 +52,17 @@ namespace BTL_HTPT
 
         public void SetVisibleButton(bool flag)
         {
-            insertButton.Visible = flag;
-            updateButton.Visible = flag;
-            deleteButton.Visible = flag;
-            saveButton.Visible = flag;
-            cancelButton.Visible = flag;
-            
+            buttonInsert.Visible = flag;
+            buttonUpdate.Visible = flag;
+            buttonDelete.Visible = flag;
+            buttonSave.Visible = flag;
+            buttonCancel.Visible = flag;
+
         }
 
         public void SetVisivlePropagateButton(bool flag)
         {
-            propagateButton.Visible = flag;
+            buttonPropagate.Visible = flag;
         }
 
         public void LoadData()
@@ -81,66 +75,66 @@ namespace BTL_HTPT
                 tableProduct.Columns[2].ColumnName = "Giá";
                 tableProduct.Columns[3].ColumnName = "Ngày sản xuất";
                 tableProduct.Columns[4].ColumnName = "Đang còn hàng";
-                dataGridView1.Columns.Clear();
-                dataGridView1.DataSource = tableProduct;
+                dataGridViewProduct.Columns.Clear();
+                dataGridViewProduct.DataSource = tableProduct;
                 selectedRow = 0;
                 GetInfoInput(selectedRow);
                 GetInfoProduct();
-                updateButton.Enabled = true;
-                deleteButton.Enabled = true;
+                buttonUpdate.Enabled = true;
+                buttonDelete.Enabled = true;
             }
             else
             {
-                updateButton.Enabled = false;
-                deleteButton.Enabled = false;
+                buttonUpdate.Enabled = false;
+                buttonDelete.Enabled = false;
             }
         }
 
         private void GetInfoProduct()
         {
-            int.TryParse(productIDTextBox.Text, out int productID);
+            int.TryParse(textBoxProductID.Text, out int productID);
             product.ProductID = productID;
-            product.ProductName = productNameTextBox.Text;
-            decimal.TryParse(priceTextBox.Text, out decimal price);
+            product.ProductName = textBoxProductName.Text;
+            decimal.TryParse(textBoxPrice.Text, out decimal price);
             product.Price = price;
-            product.ManufactureDate = manufactureDateDateTimePicker.Value;
-            product.IsAvailable = isAvailableCheckBox.Checked;
+            product.ManufactureDate = dateTimePickerManufactureDate.Value;
+            product.IsAvailable = checkBoxIsAvailable.Checked;
         }
 
         private void GetInfoInput(int index)
         {
-            if (index < dataGridView1.Rows.Count && index >= 0)
+            if (index < dataGridViewProduct.Rows.Count && index >= 0)
             {
-                productIDTextBox.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
-                productNameTextBox.Text = dataGridView1.Rows[index].Cells[1].Value.ToString();
-                priceTextBox.Text = dataGridView1.Rows[index].Cells[2].Value.ToString();
-                DateTime.TryParse(dataGridView1.Rows[index].Cells[3].Value.ToString(), out DateTime manufactureDate);
-                manufactureDateDateTimePicker.Value = manufactureDate;
-                bool.TryParse(dataGridView1.Rows[index].Cells[4].Value.ToString(), out bool isAvailabel);
-                isAvailableCheckBox.Checked = isAvailabel;
+                textBoxProductID.Text = dataGridViewProduct.Rows[index].Cells[0].Value.ToString();
+                textBoxProductName.Text = dataGridViewProduct.Rows[index].Cells[1].Value.ToString();
+                textBoxPrice.Text = dataGridViewProduct.Rows[index].Cells[2].Value.ToString();
+                DateTime.TryParse(dataGridViewProduct.Rows[index].Cells[3].Value.ToString(), out DateTime manufactureDate);
+                dateTimePickerManufactureDate.Value = manufactureDate;
+                bool.TryParse(dataGridViewProduct.Rows[index].Cells[4].Value.ToString(), out bool isAvailabel);
+                checkBoxIsAvailable.Checked = isAvailabel;
             }
         }
 
         private void ClearInput()
         {
-            productIDTextBox.Clear();
-            productNameTextBox.Clear();
-            priceTextBox.Clear();
-            manufactureDateDateTimePicker.Value = DateTime.Now;
-            isAvailableCheckBox.Checked = false;
+            textBoxProductID.Clear();
+            textBoxProductName.Clear();
+            textBoxPrice.Clear();
+            dateTimePickerManufactureDate.Value = DateTime.Now;
+            checkBoxIsAvailable.Checked = false;
         }
 
         private bool CheckInput()
         {
-            if (productIDTextBox.Text.Length == 0)
+            if (textBoxProductID.Text.Length == 0)
             {
                 return false;
             }
-            if (productIDTextBox.Text.Length == 0)
+            if (textBoxProductID.Text.Length == 0)
             {
                 return false;
             }
-            if (productIDTextBox.Text.Length == 0)
+            if (textBoxProductID.Text.Length == 0)
             {
                 return false;
             }
@@ -150,7 +144,7 @@ namespace BTL_HTPT
         private void saveButton_Click(object sender, EventArgs e)
         {
             GetInfoProduct();
-            
+
             switch (saveType)
             {
                 case SaveType.INSERT:
@@ -178,7 +172,7 @@ namespace BTL_HTPT
                     }
                     break;
                 case SaveType.DELETE:
-                    if (dataGridView1.Rows.Count == 0)
+                    if (dataGridViewProduct.Rows.Count == 0)
                     {
                         ClearInput();
                     }
@@ -208,27 +202,27 @@ namespace BTL_HTPT
             SetEnableEditButton(false);
             SetEnableInput(false);
             LoadData();
-            
+
         }
 
         private void SetEnableInput(bool flag)
         {
-            productIDTextBox.ReadOnly = !flag;
-            productNameTextBox.ReadOnly = !flag;
-            priceTextBox.ReadOnly = !flag;
-            manufactureDateDateTimePicker.Enabled = flag;
-            isAvailableCheckBox.Enabled = flag;
+            textBoxProductID.ReadOnly = !flag;
+            textBoxProductName.ReadOnly = !flag;
+            textBoxPrice.ReadOnly = !flag;
+            dateTimePickerManufactureDate.Enabled = flag;
+            checkBoxIsAvailable.Enabled = flag;
         }
 
         private void SetEnableEditButton(bool flag)
         {
-            saveButton.Enabled = flag;
-            cancelButton.Enabled = flag;
-            propagateButton.Enabled = !flag;
-            reloadButton.Enabled = !flag;
-            insertButton.Enabled = !flag;
-            updateButton.Enabled = !flag;
-            deleteButton.Enabled = !flag;
+            buttonSave.Enabled = flag;
+            buttonCancel.Enabled = flag;
+            buttonPropagate.Enabled = !flag;
+            buttonReload.Enabled = !flag;
+            buttonInsert.Enabled = !flag;
+            buttonUpdate.Enabled = !flag;
+            buttonDelete.Enabled = !flag;
         }
 
         private void insertButton_Click(object sender, EventArgs e)
@@ -242,16 +236,16 @@ namespace BTL_HTPT
         private void updateButton_Click(object sender, EventArgs e)
         {
             SetEnableInput(true);
-            productIDTextBox.ReadOnly = true;
+            textBoxProductID.ReadOnly = true;
             saveType = SaveType.UPDATE;
             SetEnableEditButton(true);
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
+            if (dataGridViewProduct.Rows.Count > 0)
             {
-                dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
+                dataGridViewProduct.Rows.Remove(dataGridViewProduct.SelectedRows[0]);
                 saveType = SaveType.DELETE;
                 SetEnableEditButton(true);
             }
@@ -317,9 +311,9 @@ namespace BTL_HTPT
 
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0)
+            if (dataGridViewProduct.Rows.Count == 0)
             {
-                updateButton.Enabled = false;
+                buttonUpdate.Enabled = false;
             }
         }
 
@@ -330,7 +324,8 @@ namespace BTL_HTPT
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((priceTextBox.Text.Length == 0) && (e.KeyChar == '.')) {
+            if ((textBoxPrice.Text.Length == 0) && (e.KeyChar == '.'))
+            {
                 e.Handled = true;
             }
 
@@ -339,7 +334,7 @@ namespace BTL_HTPT
                 e.Handled = true;
             }
 
-            if ((e.KeyChar == '.') && (priceTextBox.Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && (textBoxPrice.Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }

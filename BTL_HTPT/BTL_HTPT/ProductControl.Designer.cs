@@ -227,7 +227,6 @@
             this.productIDTextBox.ReadOnly = true;
             this.productIDTextBox.Size = new System.Drawing.Size(226, 20);
             this.productIDTextBox.TabIndex = 16;
-            this.productIDTextBox.TextChanged += new System.EventHandler(this.productIDTextBox_TextChanged);
             this.productIDTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productIDTextBox_KeyPress);
             // 
             // productNameTextBox
@@ -260,8 +259,6 @@
             this.manufactureDateDateTimePicker.Location = new System.Drawing.Point(467, 3);
             this.manufactureDateDateTimePicker.Name = "manufactureDateDateTimePicker";
             this.manufactureDateDateTimePicker.Size = new System.Drawing.Size(255, 20);
-            this.manufactureDateDateTimePicker.TabIndex = 20;
-            this.manufactureDateDateTimePicker.ValueChanged += new System.EventHandler(this.manufactureDateDateTimePicker_ValueChanged);
             // 
             // isAvailableCheckBox
             // 
@@ -275,7 +272,6 @@
             this.isAvailableCheckBox.Size = new System.Drawing.Size(255, 24);
             this.isAvailableCheckBox.TabIndex = 21;
             this.isAvailableCheckBox.UseVisualStyleBackColor = true;
-            this.isAvailableCheckBox.CheckedChanged += new System.EventHandler(this.isAvailableCheckBox_CheckedChanged);
             // 
             // manufactureDateLabel
             // 
@@ -380,7 +376,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(261, 30);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
@@ -416,12 +412,13 @@
             this.tableLayoutPanel2.Controls.Add(this.notifyTextBox, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonClearNotify, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(547, 153);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(544, 150);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.94444F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.055555F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(175, 360);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(181, 366);
             this.tableLayoutPanel2.TabIndex = 29;
             // 
             // notifyTextBox
@@ -432,15 +429,15 @@
             this.notifyTextBox.Multiline = true;
             this.notifyTextBox.Name = "notifyTextBox";
             this.notifyTextBox.ReadOnly = true;
-            this.notifyTextBox.Size = new System.Drawing.Size(169, 324);
+            this.notifyTextBox.Size = new System.Drawing.Size(175, 330);
             this.notifyTextBox.TabIndex = 15;
             // 
             // buttonClearNotify
             // 
             this.buttonClearNotify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonClearNotify.Location = new System.Drawing.Point(3, 333);
+            this.buttonClearNotify.Location = new System.Drawing.Point(3, 339);
             this.buttonClearNotify.Name = "buttonClearNotify";
-            this.buttonClearNotify.Size = new System.Drawing.Size(169, 24);
+            this.buttonClearNotify.Size = new System.Drawing.Size(175, 24);
             this.buttonClearNotify.TabIndex = 16;
             this.buttonClearNotify.Text = "Xóa thông báo";
             this.buttonClearNotify.UseVisualStyleBackColor = true;
