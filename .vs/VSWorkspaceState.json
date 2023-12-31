@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BTL_HTPT",
+    "\\BTL_HTPT\\BTL_HTPT"
   ],
-  "SelectedNode": "\\F:\\Repos\\BaiTapLon_HeThongPhanTan",
+  "SelectedNode": "\\BTL_HTPT\\BTL_HTPT\\packages.config",
   "PreviewInSolutionExplorer": false
 }
