@@ -9,6 +9,16 @@ namespace BTL_HTPT
     {
         private string connectionString;
 
+        public string ConnectionString
+        {
+            get => connectionString;
+
+            set
+            {
+                connectionString = value;
+            }
+        }
+
         public SQLConnector(string connectionString)
         {
             this.connectionString = connectionString;
@@ -19,16 +29,25 @@ namespace BTL_HTPT
         public DataTable GetTable(string query)
         {
             DataTable table = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+
+            try
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        dataAdapter.Fill(table);
+                        using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
+                        {
+                            dataAdapter.Fill(table);
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
             return table;
         }
 
