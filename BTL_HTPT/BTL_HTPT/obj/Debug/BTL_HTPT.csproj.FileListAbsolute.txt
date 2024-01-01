@@ -432,7 +432,6 @@ C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.AssemblyReference.cache
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.Properties.Resources.resources
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.GenerateResource.cache
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.CoreCompileInputs.cache
