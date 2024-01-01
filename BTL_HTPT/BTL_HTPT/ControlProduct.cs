@@ -313,6 +313,7 @@ namespace BTL_HTPT
         private void WriteNoitify(string notify)
         {
             textBoxNotify.Text += DateTime.Now.ToString() + ":" + Environment.NewLine + notify + Environment.NewLine + Environment.NewLine;
+            textBoxNotify.SelectionStart = textBoxNotify.Text.Length;
         }
 
         private void ControlProduct_Load(object sender, EventArgs e)
