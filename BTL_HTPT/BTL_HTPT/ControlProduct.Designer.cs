@@ -375,7 +375,7 @@
             this.tableLayoutPanelButtonSaveAndCancel.Name = "tableLayoutPanelButtonSaveAndCancel";
             this.tableLayoutPanelButtonSaveAndCancel.RowCount = 1;
             this.tableLayoutPanelButtonSaveAndCancel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelButtonSaveAndCancel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanelButtonSaveAndCancel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanelButtonSaveAndCancel.Size = new System.Drawing.Size(310, 36);
             this.tableLayoutPanelButtonSaveAndCancel.TabIndex = 28;
             // 

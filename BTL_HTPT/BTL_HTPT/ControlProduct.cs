@@ -128,25 +128,23 @@ namespace BTL_HTPT
             checkBoxIsAvailable.Checked = false;
         }
 
-        private void CheckInput()
+        private bool IsInputValid()
         {
-            bool flag = (textBoxProductID.Text.Length != 0);
-            flag = flag && (textBoxProductID.Text.Length != 0);
-            flag = flag && (textBoxProductID.Text.Length != 0);
+            bool flag = (textBoxProductID.Text.Length != 0) && (textBoxPrice.Text.Length != 0) && (textBoxProductName.Text.Length != 0);
             if (!flag)
             {
                 MessageBox.Show("Bạn chưa nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return flag;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             GetInfoProductFormInputField();
-
-            switch (saveType)
+            if (saveType == SaveType.INSERT)
             {
-                case SaveType.INSERT:
-                    CheckInput();
+                if (IsInputValid())
+                {
                     if (productDAO.InsertProduct(product))
                     {
                         WriteNoitify("Thêm sản phẩm thành công.");
@@ -155,9 +153,16 @@ namespace BTL_HTPT
                     {
                         WriteNoitify("Thêm sản phẩm không thành công.");
                     }
-                    break;
-                case SaveType.UPDATE:
-                    CheckInput();
+                    saveType = SaveType.NONE;
+                    SetEnableEditButton(false);
+                    SetEnableInput(false);
+                    LoadData();
+                }
+            }
+            else if (saveType == SaveType.UPDATE)
+            {
+                if (IsInputValid())
+                {
                     if (productDAO.UpdateProduct(product))
                     {
                         WriteNoitify("Cập nhật sản phẩm thành công.");
@@ -166,23 +171,29 @@ namespace BTL_HTPT
                     {
                         WriteNoitify("Cập nhật sản phẩm không thành công.");
                     }
-                    break;
-                case SaveType.DELETE:
-                    if (productDAO.DeleteProduct(product))
-                    {
-                        WriteNoitify("Xóa sản phẩm thành công.");
-                    }
-                    else
-                    {
-                        WriteNoitify("Xóa sản phẩm không thành công.");
-                    }
-                    break;
+                    saveType = SaveType.NONE;
+                    SetEnableEditButton(false);
+                    SetEnableInput(false);
+                    LoadData();
+                }                    
             }
-            saveType = SaveType.NONE;
-            SetEnableEditButton(false);
-            SetEnableInput(false);
-            LoadData();
+            else if (saveType == SaveType.DELETE)
+            {
+                if (productDAO.DeleteProduct(product))
+                {
+                    WriteNoitify("Xóa sản phẩm thành công.");
+                }
+                else
+                {
+                    WriteNoitify("Xóa sản phẩm không thành công.");
+                }
+                saveType = SaveType.NONE;
+                SetEnableEditButton(false);
+                SetEnableInput(false);
+                LoadData();
+            }
         }
+
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
@@ -318,6 +329,8 @@ namespace BTL_HTPT
 
         private void ControlProduct_Load(object sender, EventArgs e)
         {
+            buttonSave.Enabled = false;
+            buttonCancel.Enabled = false;
             InitProductDAO();
             LoadData();
         }
