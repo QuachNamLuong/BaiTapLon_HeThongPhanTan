@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BTL_HTPT
 {
-    public partial class DemoForm1 : Form
+    public partial class FormDemo1 : Form
     {
-        public DemoForm1()
+        public FormDemo1()
         {
             InitializeComponent();
             productControl2.SetVisibleButton(false);

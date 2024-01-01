@@ -433,10 +433,6 @@ C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.AssemblyReference.cache
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.DemoForm1.resources
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.DemoForm3.resources
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.DemoForm2.resources
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.ProductControl.resources
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.Properties.Resources.resources
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.GenerateResource.cache
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.CoreCompileInputs.cache
@@ -444,3 +440,7 @@ C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.exe
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.pdb
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.Demo6SiteForm1.resources
+C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo1.resources
+C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo3.resources
+C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo2.resources
+C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.ControlProduct.resources

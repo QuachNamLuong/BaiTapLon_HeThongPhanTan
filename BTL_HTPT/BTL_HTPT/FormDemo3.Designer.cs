@@ -1,7 +1,7 @@
 ﻿
 namespace BTL_HTPT
 {
-    partial class DemoForm3
+    partial class FormDemo3
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace BTL_HTPT
         /// </summary>
         private void InitializeComponent()
         {
-            this.productControl1 = new BTL_HTPT.ProductControl();
+            this.productControl1 = new BTL_HTPT.ControlProduct();
             this.SuspendLayout();
             // 
             // productControl1
@@ -55,6 +55,6 @@ namespace BTL_HTPT
 
         #endregion
 
-        private ProductControl productControl1;
+        private ControlProduct productControl1;
     }
 }

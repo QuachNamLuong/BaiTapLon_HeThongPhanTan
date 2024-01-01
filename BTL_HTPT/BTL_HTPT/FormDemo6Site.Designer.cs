@@ -36,12 +36,12 @@ namespace BTL_HTPT
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.productControl1 = new BTL_HTPT.ProductControl();
-            this.productControl2 = new BTL_HTPT.ProductControl();
-            this.productControl3 = new BTL_HTPT.ProductControl();
-            this.productControl4 = new BTL_HTPT.ProductControl();
-            this.productControl5 = new BTL_HTPT.ProductControl();
-            this.productControl6 = new BTL_HTPT.ProductControl();
+            this.productControl1 = new BTL_HTPT.ControlProduct();
+            this.productControl2 = new BTL_HTPT.ControlProduct();
+            this.productControl3 = new BTL_HTPT.ControlProduct();
+            this.productControl4 = new BTL_HTPT.ControlProduct();
+            this.productControl5 = new BTL_HTPT.ControlProduct();
+            this.productControl6 = new BTL_HTPT.ControlProduct();
             this.tabControl1.SuspendLayout();
             this.tabPageMain.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -219,12 +219,12 @@ namespace BTL_HTPT
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private ProductControl productControl1;
-        private ProductControl productControl2;
-        private ProductControl productControl3;
-        private ProductControl productControl4;
-        private ProductControl productControl5;
+        private ControlProduct productControl1;
+        private ControlProduct productControl2;
+        private ControlProduct productControl3;
+        private ControlProduct productControl4;
+        private ControlProduct productControl5;
         private System.Windows.Forms.TabPage tabPage1;
-        private ProductControl productControl6;
+        private ControlProduct productControl6;
     }
 }

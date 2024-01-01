@@ -13,7 +13,7 @@ using Dotmim.Sync;
 
 namespace BTL_HTPT
 {
-    public partial class ProductControl : UserControl
+    public partial class ControlProduct : UserControl
     {
         private readonly Product product;
         private ProductDAO productDAO;
@@ -48,7 +48,7 @@ namespace BTL_HTPT
             }
         }
 
-        public ProductControl()
+        public ControlProduct()
         {
             InitializeComponent();
             product = new Product();

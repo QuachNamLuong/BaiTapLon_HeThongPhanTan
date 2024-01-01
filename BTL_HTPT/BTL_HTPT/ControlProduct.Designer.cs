@@ -1,6 +1,6 @@
 ﻿namespace BTL_HTPT
 {
-    partial class ProductControl
+    partial class ControlProduct
     {
         /// <summary> 
         /// Required designer variable.
@@ -259,6 +259,7 @@
             this.manufactureDateDateTimePicker.Location = new System.Drawing.Point(467, 3);
             this.manufactureDateDateTimePicker.Name = "manufactureDateDateTimePicker";
             this.manufactureDateDateTimePicker.Size = new System.Drawing.Size(255, 20);
+            this.manufactureDateDateTimePicker.TabIndex = 19;
             // 
             // isAvailableCheckBox
             // 
