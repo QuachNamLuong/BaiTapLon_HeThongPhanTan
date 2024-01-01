@@ -19,12 +19,10 @@ namespace BTL_HTPT
             controlProductCopy.SetVisivlePropagateButton(false);
         }
 
-        private void DemoForm2_Load(object sender, EventArgs e)
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            controlProductOwner.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
-            controlProductCopy.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
-            controlProductOwner.ConnectionStringNext = controlProductCopy.ConnectionString;
-            controlProductOwner.LoadData();
+            ControlProduct controlProduct = (ControlProduct)tabControl1.SelectedTab.Controls[0];
+            controlProduct.LoadData();
         }
     }
 }

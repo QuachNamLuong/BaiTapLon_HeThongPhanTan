@@ -65,7 +65,7 @@ namespace BTL_HTPT
             this.tabControlSite.SelectedIndex = 0;
             this.tabControlSite.Size = new System.Drawing.Size(984, 561);
             this.tabControlSite.TabIndex = 0;
-            this.tabControlSite.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControlSite.SelectedIndexChanged += new System.EventHandler(this.TabControl1_SelectedIndexChanged);
             // 
             // tabPageMain
             // 

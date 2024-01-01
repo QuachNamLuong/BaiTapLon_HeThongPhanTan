@@ -10,7 +10,7 @@ namespace BTL_HTPT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDemo6Site());
+            Application.Run(new FormDemoLastSite());
         }
     }
 }

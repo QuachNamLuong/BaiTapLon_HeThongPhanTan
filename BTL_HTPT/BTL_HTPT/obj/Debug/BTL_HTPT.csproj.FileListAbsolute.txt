@@ -563,4 +563,3 @@ C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan1\BTL_HTPT\BTL_HTPT\obj
 C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan1\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.CopyComplete
 C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan1\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.exe
 C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan1\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.pdb
-C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan1\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.AssemblyReference.cache

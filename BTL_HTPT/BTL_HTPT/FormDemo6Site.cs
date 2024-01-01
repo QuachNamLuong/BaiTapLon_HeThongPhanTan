@@ -16,7 +16,7 @@ namespace BTL_HTPT
             controlProductSiteCopy5.SetVisivlePropagateButton(false);
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ControlProduct controlProduct = (ControlProduct)tabControlSite.SelectedTab.Controls[0];
             controlProduct.LoadData();

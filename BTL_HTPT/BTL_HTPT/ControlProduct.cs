@@ -101,7 +101,6 @@ namespace BTL_HTPT
         {
             if (dataGridViewProduct.CurrentRow != null)
             {
-                
                 int index = dataGridViewProduct.CurrentRow.Index;
                 //get infor from row to input field
                 textBoxProductID.Text = dataGridViewProduct.Rows[index].Cells[0].Value.ToString();
@@ -138,7 +137,7 @@ namespace BTL_HTPT
             return flag;
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             GetInfoProductFormInputField();
             if (saveType == SaveType.INSERT)
@@ -175,7 +174,7 @@ namespace BTL_HTPT
                     SetEnableEditButton(false);
                     SetEnableInput(false);
                     LoadData();
-                }                    
+                }
             }
             else if (saveType == SaveType.DELETE)
             {
@@ -195,7 +194,7 @@ namespace BTL_HTPT
         }
 
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             ClearInput();
             GetInfoRowSelected();
@@ -225,7 +224,7 @@ namespace BTL_HTPT
             buttonDelete.Enabled = !flag;
         }
 
-        private void insertButton_Click(object sender, EventArgs e)
+        private void InsertButton_Click(object sender, EventArgs e)
         {
             ClearInput();
             SetEnableInput(true);
@@ -233,7 +232,7 @@ namespace BTL_HTPT
             SetEnableEditButton(true);
         }
 
-        private void updateButton_Click(object sender, EventArgs e)
+        private void UpdateButton_Click(object sender, EventArgs e)
         {
             SetEnableInput(true);
             textBoxProductID.ReadOnly = true;
@@ -241,7 +240,7 @@ namespace BTL_HTPT
             SetEnableEditButton(true);
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
             if (dataGridViewProduct.Rows.Count > 0)
             {
@@ -273,19 +272,17 @@ namespace BTL_HTPT
             }
         }
 
-        
-
-        private void propagateButton_Click(object sender, EventArgs e)
+        private void PropagateButton_Click(object sender, EventArgs e)
         {
             _ = PushDataDownAsync(ConnectionString, ConnectionStringNext);
         }
 
-        private void reloadButton_Click(object sender, EventArgs e)
+        private void ReloadButton_Click(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void PriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((textBoxPrice.Text.Length == 0) && (e.KeyChar == '.'))
             {
@@ -303,7 +300,7 @@ namespace BTL_HTPT
             }
         }
 
-        private void productIDTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void ProductIDTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -311,19 +308,19 @@ namespace BTL_HTPT
             }
         }
 
-        private void buttonClearNotify_Click(object sender, EventArgs e)
+        private void ButtonClearNotify_Click(object sender, EventArgs e)
         {
             textBoxNotify.Clear();
         }
 
-        private void dataGridViewProduct_SelectionChanged(object sender, EventArgs e)
+        private void DataGridViewProduct_SelectionChanged(object sender, EventArgs e)
         {
             GetInfoRowSelected();
         }
 
         private void WriteNoitify(string notify)
         {
-            textBoxNotify.Text += DateTime.Now.ToString() + ":" + Environment.NewLine + notify + Environment.NewLine + Environment.NewLine;
+            textBoxNotify.Text += $"{DateTime.Now:yyyy-MM-dd HH:mm:ss}:{Environment.NewLine}{notify}{Environment.NewLine}{Environment.NewLine}";
             textBoxNotify.SelectionStart = textBoxNotify.Text.Length;
         }
 
@@ -335,7 +332,7 @@ namespace BTL_HTPT
             LoadData();
         }
 
-        private void dataGridViewProduct_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        private void DataGridViewProduct_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             CheckProductTableData();
         }
@@ -347,7 +344,7 @@ namespace BTL_HTPT
             buttonDelete.Enabled = flag;
         }
 
-        private void dataGridViewProduct_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void DataGridViewProduct_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             CheckProductTableData();
         }

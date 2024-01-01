@@ -173,9 +173,9 @@
             this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProduct.Size = new System.Drawing.Size(692, 414);
             this.dataGridViewProduct.TabIndex = 15;
-            this.dataGridViewProduct.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewProduct_RowsAdded);
-            this.dataGridViewProduct.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridViewProduct_RowsRemoved);
-            this.dataGridViewProduct.SelectionChanged += new System.EventHandler(this.dataGridViewProduct_SelectionChanged);
+            this.dataGridViewProduct.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridViewProduct_RowsAdded);
+            this.dataGridViewProduct.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridViewProduct_RowsRemoved);
+            this.dataGridViewProduct.SelectionChanged += new System.EventHandler(this.DataGridViewProduct_SelectionChanged);
             // 
             // productIDColumn
             // 
@@ -225,7 +225,7 @@
             this.textBoxProductID.ReadOnly = true;
             this.textBoxProductID.Size = new System.Drawing.Size(432, 20);
             this.textBoxProductID.TabIndex = 16;
-            this.textBoxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productIDTextBox_KeyPress);
+            this.textBoxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProductIDTextBox_KeyPress);
             // 
             // textBoxProductName
             // 
@@ -246,7 +246,7 @@
             this.textBoxPrice.ReadOnly = true;
             this.textBoxPrice.Size = new System.Drawing.Size(432, 20);
             this.textBoxPrice.TabIndex = 18;
-            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceTextBox_KeyPress);
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PriceTextBox_KeyPress);
             // 
             // dateTimePickerManufactureDate
             // 
@@ -303,7 +303,7 @@
             this.buttonInsert.TabIndex = 22;
             this.buttonInsert.Text = "Thêm";
             this.buttonInsert.UseVisualStyleBackColor = true;
-            this.buttonInsert.Click += new System.EventHandler(this.insertButton_Click);
+            this.buttonInsert.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // buttonUpdate
             // 
@@ -314,7 +314,7 @@
             this.buttonUpdate.TabIndex = 23;
             this.buttonUpdate.Text = "Cập nhật";
             this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.updateButton_Click);
+            this.buttonUpdate.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // buttonDelete
             // 
@@ -325,7 +325,7 @@
             this.buttonDelete.TabIndex = 24;
             this.buttonDelete.Text = "Xóa";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.deleteButton_Click);
+            this.buttonDelete.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // buttonPropagate
             // 
@@ -336,7 +336,7 @@
             this.buttonPropagate.TabIndex = 25;
             this.buttonPropagate.Text = "Lan truyền";
             this.buttonPropagate.UseVisualStyleBackColor = true;
-            this.buttonPropagate.Click += new System.EventHandler(this.propagateButton_Click);
+            this.buttonPropagate.Click += new System.EventHandler(this.PropagateButton_Click);
             // 
             // buttonReload
             // 
@@ -348,7 +348,7 @@
             this.buttonReload.TabIndex = 27;
             this.buttonReload.Text = "Tải lại trang";
             this.buttonReload.UseVisualStyleBackColor = true;
-            this.buttonReload.Click += new System.EventHandler(this.reloadButton_Click);
+            this.buttonReload.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
             // labelNotify
             // 
@@ -388,7 +388,7 @@
             this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Lưu";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.saveButton_Click);
+            this.buttonSave.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // buttonCancel
             // 
@@ -399,7 +399,7 @@
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Hủy";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.cancelButton_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -439,7 +439,7 @@
             this.buttonClearNotify.TabIndex = 16;
             this.buttonClearNotify.Text = "Xóa thông báo";
             this.buttonClearNotify.UseVisualStyleBackColor = true;
-            this.buttonClearNotify.Click += new System.EventHandler(this.buttonClearNotify_Click);
+            this.buttonClearNotify.Click += new System.EventHandler(this.ButtonClearNotify_Click);
             // 
             // ControlProduct
             // 
