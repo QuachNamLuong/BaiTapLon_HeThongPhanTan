@@ -248,23 +248,23 @@
     <Compile Include="FormDemo6Site.Designer.cs">
       <DependentUpon>FormDemo6Site.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDemo1.cs">
+    <Compile Include="FormDemoOwnerAndCopy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDemo1.Designer.cs">
-      <DependentUpon>FormDemo1.cs</DependentUpon>
+    <Compile Include="FormDemoOwnerAndCopy.Designer.cs">
+      <DependentUpon>FormDemoOwnerAndCopy.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDemo3.cs">
+    <Compile Include="FormDemoLastSite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDemo3.Designer.cs">
-      <DependentUpon>FormDemo3.cs</DependentUpon>
+    <Compile Include="FormDemoLastSite.Designer.cs">
+      <DependentUpon>FormDemoLastSite.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDemo2.cs">
+    <Compile Include="FormDemo2SiteCopy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDemo2.Designer.cs">
-      <DependentUpon>FormDemo2.cs</DependentUpon>
+    <Compile Include="FormDemo2SiteCopy.Designer.cs">
+      <DependentUpon>FormDemo2SiteCopy.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ControlProduct.cs">
@@ -280,14 +280,14 @@
     <EmbeddedResource Include="FormDemo6Site.resx">
       <DependentUpon>FormDemo6Site.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDemo1.resx">
-      <DependentUpon>FormDemo1.cs</DependentUpon>
+    <EmbeddedResource Include="FormDemoOwnerAndCopy.resx">
+      <DependentUpon>FormDemoOwnerAndCopy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDemo3.resx">
-      <DependentUpon>FormDemo3.cs</DependentUpon>
+    <EmbeddedResource Include="FormDemoLastSite.resx">
+      <DependentUpon>FormDemoLastSite.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDemo2.resx">
-      <DependentUpon>FormDemo2.cs</DependentUpon>
+    <EmbeddedResource Include="FormDemo2SiteCopy.resx">
+      <DependentUpon>FormDemo2SiteCopy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlProduct.resx">
       <DependentUpon>ControlProduct.cs</DependentUpon>

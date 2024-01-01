@@ -1,7 +1,7 @@
 ﻿
 namespace BTL_HTPT
 {
-    partial class FormDemo1
+    partial class FormDemoOwnerAndCopy
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,9 @@ namespace BTL_HTPT
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.productControl1 = new BTL_HTPT.ControlProduct();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.productControl2 = new BTL_HTPT.ControlProduct();
+            this.controlProductOwner = new BTL_HTPT.ControlProduct();
+            this.controlProductCopy = new BTL_HTPT.ControlProduct();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -47,32 +47,23 @@ namespace BTL_HTPT
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 450);
+            this.tabControl1.Size = new System.Drawing.Size(984, 561);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.productControl1);
+            this.tabPage1.Controls.Add(this.controlProductOwner);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 424);
+            this.tabPage1.Size = new System.Drawing.Size(976, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // productControl1
-            // 
-            this.productControl1.ConnectionStringNext = null;
-            this.productControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productControl1.Location = new System.Drawing.Point(3, 3);
-            this.productControl1.Name = "productControl1";
-            this.productControl1.Size = new System.Drawing.Size(786, 418);
-            this.productControl1.TabIndex = 0;
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.productControl2);
+            this.tabPage2.Controls.Add(this.controlProductCopy);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -81,22 +72,33 @@ namespace BTL_HTPT
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // productControl2
+            // controlProductOwner
             // 
-            this.productControl2.ConnectionStringNext = null;
-            this.productControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productControl2.Location = new System.Drawing.Point(3, 3);
-            this.productControl2.Name = "productControl2";
-            this.productControl2.Size = new System.Drawing.Size(786, 418);
-            this.productControl2.TabIndex = 0;
+            this.controlProductOwner.ConnectionString = null;
+            this.controlProductOwner.ConnectionStringNext = null;
+            this.controlProductOwner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlProductOwner.Location = new System.Drawing.Point(3, 3);
+            this.controlProductOwner.Name = "controlProductOwner";
+            this.controlProductOwner.Size = new System.Drawing.Size(970, 529);
+            this.controlProductOwner.TabIndex = 0;
             // 
-            // DemoForm1
+            // controlProductCopy
+            // 
+            this.controlProductCopy.ConnectionString = null;
+            this.controlProductCopy.ConnectionStringNext = null;
+            this.controlProductCopy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controlProductCopy.Location = new System.Drawing.Point(3, 3);
+            this.controlProductCopy.Name = "controlProductCopy";
+            this.controlProductCopy.Size = new System.Drawing.Size(786, 418);
+            this.controlProductCopy.TabIndex = 0;
+            // 
+            // FormDemoOwnerAndCopy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.tabControl1);
-            this.Name = "DemoForm1";
+            this.Name = "FormDemoOwnerAndCopy";
             this.Text = "Demo2";
             this.Load += new System.EventHandler(this.DemoForm2_Load);
             this.tabControl1.ResumeLayout(false);
@@ -111,7 +113,7 @@ namespace BTL_HTPT
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private ControlProduct productControl1;
-        private ControlProduct productControl2;
+        private ControlProduct controlProductOwner;
+        private ControlProduct controlProductCopy;
     }
 }

@@ -13,18 +13,23 @@ namespace BTL_HTPT
         private ProductDAO productDAO;
         private enum SaveType { INSERT, UPDATE, DELETE, NONE };
         private SaveType saveType;
-        private int selectedRow;
+        private string connectionString;
         private string connectionStringNext;
+
+        private void InitProductDAO()
+        {
+            productDAO = new ProductDAO(ConnectionString);
+        }
 
         public string ConnectionString
         {
-            get => productDAO.ConnectionString;
+            get => connectionString;
 
             set
             {
                 if (!string.IsNullOrWhiteSpace(value))
                 {
-                    productDAO = new ProductDAO(value);
+                    connectionString = value;
                 }
             }
         }
@@ -47,7 +52,6 @@ namespace BTL_HTPT
             InitializeComponent();
             product = new Product();
             saveType = SaveType.NONE;
-            selectedRow = -1;
         }
 
         public void SetVisibleButton(bool flag)
@@ -77,20 +81,12 @@ namespace BTL_HTPT
                 tableProduct.Columns[4].ColumnName = "Đang còn hàng";
                 dataGridViewProduct.Columns.Clear();
                 dataGridViewProduct.DataSource = tableProduct;
-                selectedRow = 0;
-                GetInfoInput(selectedRow);
-                GetInfoProduct();
-                buttonUpdate.Enabled = true;
-                buttonDelete.Enabled = true;
+                GetInfoRowSelected();
             }
-            else
-            {
-                buttonUpdate.Enabled = false;
-                buttonDelete.Enabled = false;
-            }
+            CheckProductTableData();
         }
 
-        private void GetInfoProduct()
+        private void GetInfoProductFormInputField()
         {
             int.TryParse(textBoxProductID.Text, out int productID);
             product.ProductID = productID;
@@ -101,10 +97,13 @@ namespace BTL_HTPT
             product.IsAvailable = checkBoxIsAvailable.Checked;
         }
 
-        private void GetInfoInput(int index)
+        private void GetInfoRowSelected()
         {
-            if (index < dataGridViewProduct.Rows.Count && index >= 0)
+            if (dataGridViewProduct.CurrentRow != null)
             {
+                
+                int index = dataGridViewProduct.CurrentRow.Index;
+                //get infor from row to input field
                 textBoxProductID.Text = dataGridViewProduct.Rows[index].Cells[0].Value.ToString();
                 textBoxProductName.Text = dataGridViewProduct.Rows[index].Cells[1].Value.ToString();
                 textBoxPrice.Text = dataGridViewProduct.Rows[index].Cells[2].Value.ToString();
@@ -112,6 +111,11 @@ namespace BTL_HTPT
                 dateTimePickerManufactureDate.Value = manufactureDate;
                 bool.TryParse(dataGridViewProduct.Rows[index].Cells[4].Value.ToString(), out bool isAvailabel);
                 checkBoxIsAvailable.Checked = isAvailabel;
+                GetInfoProductFormInputField();
+            }
+            else
+            {
+                ClearInput();
             }
         }
 
@@ -124,65 +128,53 @@ namespace BTL_HTPT
             checkBoxIsAvailable.Checked = false;
         }
 
-        private bool CheckInput()
+        private void CheckInput()
         {
-            if (textBoxProductID.Text.Length == 0)
+            bool flag = (textBoxProductID.Text.Length != 0);
+            flag = flag && (textBoxProductID.Text.Length != 0);
+            flag = flag && (textBoxProductID.Text.Length != 0);
+            if (!flag)
             {
-                return false;
+                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (textBoxProductID.Text.Length == 0)
-            {
-                return false;
-            }
-            if (textBoxProductID.Text.Length == 0)
-            {
-                return false;
-            }
-            return true;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            GetInfoProduct();
+            GetInfoProductFormInputField();
 
             switch (saveType)
             {
                 case SaveType.INSERT:
-                    if (CheckInput())
+                    CheckInput();
+                    if (productDAO.InsertProduct(product))
                     {
-                        MessageBox.Show("Bạn chưa nhập đầy đủ thông tin");
-                    }
-                    else if (productDAO.InsertProduct(product))
-                    {
-                        MessageBox.Show("Không thể thêm sản phẩm");
+                        WriteNoitify("Thêm sản phẩm thành công.");
                     }
                     else
                     {
-                        textBoxNotify.Text = "Thêm sản phẩm thành công\n";
+                        WriteNoitify("Thêm sản phẩm không thành công.");
                     }
                     break;
                 case SaveType.UPDATE:
+                    CheckInput();
                     if (productDAO.UpdateProduct(product))
                     {
-                        MessageBox.Show("Không thể cập nhật sản phẩm");
+                        WriteNoitify("Cập nhật sản phẩm thành công.");
                     }
                     else
                     {
-                        textBoxNotify.Text = "Cập nhật sản phẩm thành công\n";
+                        WriteNoitify("Cập nhật sản phẩm không thành công.");
                     }
                     break;
                 case SaveType.DELETE:
-                    if (dataGridViewProduct.Rows.Count == 0)
-                    {
-                        ClearInput();
-                    }
                     if (productDAO.DeleteProduct(product))
                     {
-                        MessageBox.Show("Không thể xóa nhật sản phẩm");
+                        WriteNoitify("Xóa sản phẩm thành công.");
                     }
                     else
                     {
-                        textBoxNotify.Text = "Xóa sản phẩm thành công\n";
+                        WriteNoitify("Xóa sản phẩm không thành công.");
                     }
                     break;
             }
@@ -195,10 +187,7 @@ namespace BTL_HTPT
         private void cancelButton_Click(object sender, EventArgs e)
         {
             ClearInput();
-            if (selectedRow >= 0)
-            {
-                GetInfoInput(selectedRow);
-            }
+            GetInfoRowSelected();
             SetEnableEditButton(false);
             SetEnableInput(false);
             LoadData();
@@ -255,30 +244,25 @@ namespace BTL_HTPT
         {
             try
             {
-                // Create providers for server and client
                 SqlSyncProvider serverProvider = new SqlSyncProvider(serverConnectionString);
                 SqlSyncProvider clientProvider = new SqlSyncProvider(clientConnectionString);
 
-                // Specify tables to synchronize
-                var setup = new SyncSetup("Product");  // Add more tables if needed
+                var setup = new SyncSetup("Product");
 
                 // Create sync agent
                 SyncAgent agent = new SyncAgent(clientProvider, serverProvider);
 
-                // Perform synchronization repeatedly until it's done or stop is requested
-
                 var result = await agent.SynchronizeAsync(setup);
-                textBoxNotify.Text = result.ToString();
-
-                // Check if stop is requested
+                WriteNoitify(result.ToString());
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error in PushDataDown method: {ex.Message}");
-                // Consider logging the exception for analysis
             }
         }
+
+        
 
         private void propagateButton_Click(object sender, EventArgs e)
         {
@@ -288,38 +272,6 @@ namespace BTL_HTPT
         private void reloadButton_Click(object sender, EventArgs e)
         {
             LoadData();
-        }
-
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            GetInfoInput(e.RowIndex);
-            GetInfoProduct();
-        }
-
-        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
-        {
-            GetInfoInput(0);
-            GetInfoProduct();
-        }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            selectedRow = e.RowIndex;
-            GetInfoInput(e.RowIndex);
-            GetInfoProduct();
-        }
-
-        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            if (dataGridViewProduct.Rows.Count == 0)
-            {
-                buttonUpdate.Enabled = false;
-            }
-        }
-
-        private void tableProductLabel_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -351,6 +303,39 @@ namespace BTL_HTPT
         private void buttonClearNotify_Click(object sender, EventArgs e)
         {
             textBoxNotify.Clear();
+        }
+
+        private void dataGridViewProduct_SelectionChanged(object sender, EventArgs e)
+        {
+            GetInfoRowSelected();
+        }
+
+        private void WriteNoitify(string notify)
+        {
+            textBoxNotify.Text += DateTime.Now.ToString() + ":" + Environment.NewLine + notify + Environment.NewLine + Environment.NewLine;
+        }
+
+        private void ControlProduct_Load(object sender, EventArgs e)
+        {
+            InitProductDAO();
+            LoadData();
+        }
+
+        private void dataGridViewProduct_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            CheckProductTableData();
+        }
+
+        private void CheckProductTableData()
+        {
+            bool flag = dataGridViewProduct.Rows.Count > 0;
+            buttonUpdate.Enabled = flag;
+            buttonDelete.Enabled = flag;
+        }
+
+        private void dataGridViewProduct_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            CheckProductTableData();
         }
     }
 }

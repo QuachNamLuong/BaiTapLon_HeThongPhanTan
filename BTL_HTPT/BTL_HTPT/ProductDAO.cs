@@ -7,13 +7,15 @@ namespace BTL_HTPT
     class ProductDAO
     {
         private SQLConnector connector;
+        private string connectionString;
         
         public string ConnectionString
         {
-            get => connector.ConnectionString;
+            get => connectionString;
 
             set
             {
+                connectionString = value;
                 connector = new SQLConnector(value);
             }
         }

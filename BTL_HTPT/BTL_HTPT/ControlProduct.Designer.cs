@@ -67,12 +67,12 @@
             // tableLayoutPanelMain
             // 
             this.tableLayoutPanelMain.ColumnCount = 6;
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.17241F));
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.82759F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.6F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.4F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.4F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.6F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.8F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.93103F));
             this.tableLayoutPanelMain.Controls.Add(this.labelProductID, 0, 0);
             this.tableLayoutPanelMain.Controls.Add(this.labelProductName, 0, 1);
             this.tableLayoutPanelMain.Controls.Add(this.labelPrice, 0, 2);
@@ -104,7 +104,7 @@
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(725, 516);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(1000, 600);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // labelProductID
@@ -113,7 +113,7 @@
             this.labelProductID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelProductID.Location = new System.Drawing.Point(3, 0);
             this.labelProductID.Name = "labelProductID";
-            this.labelProductID.Size = new System.Drawing.Size(110, 30);
+            this.labelProductID.Size = new System.Drawing.Size(100, 36);
             this.labelProductID.TabIndex = 0;
             this.labelProductID.Text = "Mã sản phẩm:";
             this.labelProductID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,9 +122,9 @@
             // 
             this.labelProductName.AutoSize = true;
             this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProductName.Location = new System.Drawing.Point(3, 30);
+            this.labelProductName.Location = new System.Drawing.Point(3, 36);
             this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(110, 30);
+            this.labelProductName.Size = new System.Drawing.Size(100, 36);
             this.labelProductName.TabIndex = 1;
             this.labelProductName.Text = "Tên sản phẩm:";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,9 +133,9 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPrice.Location = new System.Drawing.Point(3, 60);
+            this.labelPrice.Location = new System.Drawing.Point(3, 72);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(110, 30);
+            this.labelPrice.Size = new System.Drawing.Size(100, 36);
             this.labelPrice.TabIndex = 2;
             this.labelPrice.Text = "Giá:";
             this.labelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -145,13 +145,12 @@
             this.labelTableProduct.AutoSize = true;
             this.tableLayoutPanelMain.SetColumnSpan(this.labelTableProduct, 5);
             this.labelTableProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTableProduct.Location = new System.Drawing.Point(3, 120);
+            this.labelTableProduct.Location = new System.Drawing.Point(3, 144);
             this.labelTableProduct.Name = "labelTableProduct";
-            this.labelTableProduct.Size = new System.Drawing.Size(538, 30);
+            this.labelTableProduct.Size = new System.Drawing.Size(692, 36);
             this.labelTableProduct.TabIndex = 12;
             this.labelTableProduct.Text = "Bảng sản phẩm";
             this.labelTableProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTableProduct.Click += new System.EventHandler(this.tableProductLabel_Click);
             // 
             // dataGridViewProduct
             // 
@@ -168,16 +167,15 @@
             this.isAvailableColumn});
             this.tableLayoutPanelMain.SetColumnSpan(this.dataGridViewProduct, 5);
             this.dataGridViewProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewProduct.Location = new System.Drawing.Point(3, 153);
+            this.dataGridViewProduct.Location = new System.Drawing.Point(3, 183);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(538, 360);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(692, 414);
             this.dataGridViewProduct.TabIndex = 15;
-            this.dataGridViewProduct.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
-            this.dataGridViewProduct.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            this.dataGridViewProduct.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            this.dataGridViewProduct.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
+            this.dataGridViewProduct.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewProduct_RowsAdded);
+            this.dataGridViewProduct.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridViewProduct_RowsRemoved);
+            this.dataGridViewProduct.SelectionChanged += new System.EventHandler(this.dataGridViewProduct_SelectionChanged);
             // 
             // productIDColumn
             // 
@@ -221,11 +219,11 @@
             // 
             this.tableLayoutPanelMain.SetColumnSpan(this.textBoxProductID, 2);
             this.textBoxProductID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxProductID.Location = new System.Drawing.Point(119, 3);
+            this.textBoxProductID.Location = new System.Drawing.Point(109, 3);
             this.textBoxProductID.MaxLength = 9;
             this.textBoxProductID.Name = "textBoxProductID";
             this.textBoxProductID.ReadOnly = true;
-            this.textBoxProductID.Size = new System.Drawing.Size(226, 20);
+            this.textBoxProductID.Size = new System.Drawing.Size(432, 20);
             this.textBoxProductID.TabIndex = 16;
             this.textBoxProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productIDTextBox_KeyPress);
             // 
@@ -233,20 +231,20 @@
             // 
             this.tableLayoutPanelMain.SetColumnSpan(this.textBoxProductName, 2);
             this.textBoxProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxProductName.Location = new System.Drawing.Point(119, 33);
+            this.textBoxProductName.Location = new System.Drawing.Point(109, 39);
             this.textBoxProductName.Name = "textBoxProductName";
             this.textBoxProductName.ReadOnly = true;
-            this.textBoxProductName.Size = new System.Drawing.Size(226, 20);
+            this.textBoxProductName.Size = new System.Drawing.Size(432, 20);
             this.textBoxProductName.TabIndex = 17;
             // 
             // textBoxPrice
             // 
             this.tableLayoutPanelMain.SetColumnSpan(this.textBoxPrice, 2);
             this.textBoxPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPrice.Location = new System.Drawing.Point(119, 63);
+            this.textBoxPrice.Location = new System.Drawing.Point(109, 75);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.ReadOnly = true;
-            this.textBoxPrice.Size = new System.Drawing.Size(226, 20);
+            this.textBoxPrice.Size = new System.Drawing.Size(432, 20);
             this.textBoxPrice.TabIndex = 18;
             this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceTextBox_KeyPress);
             // 
@@ -256,9 +254,9 @@
             this.dateTimePickerManufactureDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerManufactureDate.Enabled = false;
             this.dateTimePickerManufactureDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerManufactureDate.Location = new System.Drawing.Point(467, 3);
+            this.dateTimePickerManufactureDate.Location = new System.Drawing.Point(693, 3);
             this.dateTimePickerManufactureDate.Name = "dateTimePickerManufactureDate";
-            this.dateTimePickerManufactureDate.Size = new System.Drawing.Size(255, 20);
+            this.dateTimePickerManufactureDate.Size = new System.Drawing.Size(304, 20);
             this.dateTimePickerManufactureDate.TabIndex = 19;
             // 
             // checkBoxIsAvailable
@@ -267,10 +265,10 @@
             this.tableLayoutPanelMain.SetColumnSpan(this.checkBoxIsAvailable, 2);
             this.checkBoxIsAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxIsAvailable.Enabled = false;
-            this.checkBoxIsAvailable.Location = new System.Drawing.Point(467, 33);
+            this.checkBoxIsAvailable.Location = new System.Drawing.Point(693, 39);
             this.checkBoxIsAvailable.Name = "checkBoxIsAvailable";
             this.checkBoxIsAvailable.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBoxIsAvailable.Size = new System.Drawing.Size(255, 24);
+            this.checkBoxIsAvailable.Size = new System.Drawing.Size(304, 30);
             this.checkBoxIsAvailable.TabIndex = 21;
             this.checkBoxIsAvailable.UseVisualStyleBackColor = true;
             // 
@@ -278,9 +276,9 @@
             // 
             this.labelManufactureDate.AutoSize = true;
             this.labelManufactureDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelManufactureDate.Location = new System.Drawing.Point(351, 0);
+            this.labelManufactureDate.Location = new System.Drawing.Point(547, 0);
             this.labelManufactureDate.Name = "labelManufactureDate";
-            this.labelManufactureDate.Size = new System.Drawing.Size(110, 30);
+            this.labelManufactureDate.Size = new System.Drawing.Size(140, 36);
             this.labelManufactureDate.TabIndex = 3;
             this.labelManufactureDate.Text = "Ngày sản xuất:";
             this.labelManufactureDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -289,9 +287,9 @@
             // 
             this.labelIsAvailable.AutoSize = true;
             this.labelIsAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelIsAvailable.Location = new System.Drawing.Point(351, 30);
+            this.labelIsAvailable.Location = new System.Drawing.Point(547, 36);
             this.labelIsAvailable.Name = "labelIsAvailable";
-            this.labelIsAvailable.Size = new System.Drawing.Size(110, 30);
+            this.labelIsAvailable.Size = new System.Drawing.Size(140, 36);
             this.labelIsAvailable.TabIndex = 4;
             this.labelIsAvailable.Text = "Đang còn hàng:";
             this.labelIsAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -299,9 +297,9 @@
             // buttonInsert
             // 
             this.buttonInsert.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonInsert.Location = new System.Drawing.Point(3, 93);
+            this.buttonInsert.Location = new System.Drawing.Point(3, 111);
             this.buttonInsert.Name = "buttonInsert";
-            this.buttonInsert.Size = new System.Drawing.Size(110, 24);
+            this.buttonInsert.Size = new System.Drawing.Size(100, 30);
             this.buttonInsert.TabIndex = 22;
             this.buttonInsert.Text = "Thêm";
             this.buttonInsert.UseVisualStyleBackColor = true;
@@ -310,9 +308,9 @@
             // buttonUpdate
             // 
             this.buttonUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonUpdate.Location = new System.Drawing.Point(119, 93);
+            this.buttonUpdate.Location = new System.Drawing.Point(109, 111);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(110, 24);
+            this.buttonUpdate.Size = new System.Drawing.Size(208, 30);
             this.buttonUpdate.TabIndex = 23;
             this.buttonUpdate.Text = "Cập nhật";
             this.buttonUpdate.UseVisualStyleBackColor = true;
@@ -321,9 +319,9 @@
             // buttonDelete
             // 
             this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDelete.Location = new System.Drawing.Point(235, 93);
+            this.buttonDelete.Location = new System.Drawing.Point(323, 111);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(110, 24);
+            this.buttonDelete.Size = new System.Drawing.Size(218, 30);
             this.buttonDelete.TabIndex = 24;
             this.buttonDelete.Text = "Xóa";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -332,9 +330,9 @@
             // buttonPropagate
             // 
             this.buttonPropagate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPropagate.Location = new System.Drawing.Point(351, 93);
+            this.buttonPropagate.Location = new System.Drawing.Point(547, 111);
             this.buttonPropagate.Name = "buttonPropagate";
-            this.buttonPropagate.Size = new System.Drawing.Size(110, 24);
+            this.buttonPropagate.Size = new System.Drawing.Size(140, 30);
             this.buttonPropagate.TabIndex = 25;
             this.buttonPropagate.Text = "Lan truyền";
             this.buttonPropagate.UseVisualStyleBackColor = true;
@@ -344,9 +342,9 @@
             // 
             this.tableLayoutPanelMain.SetColumnSpan(this.buttonReload, 2);
             this.buttonReload.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonReload.Location = new System.Drawing.Point(467, 93);
+            this.buttonReload.Location = new System.Drawing.Point(693, 111);
             this.buttonReload.Name = "buttonReload";
-            this.buttonReload.Size = new System.Drawing.Size(255, 24);
+            this.buttonReload.Size = new System.Drawing.Size(304, 30);
             this.buttonReload.TabIndex = 27;
             this.buttonReload.Text = "Tải lại trang";
             this.buttonReload.UseVisualStyleBackColor = true;
@@ -356,9 +354,9 @@
             // 
             this.labelNotify.AutoSize = true;
             this.labelNotify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelNotify.Location = new System.Drawing.Point(547, 120);
+            this.labelNotify.Location = new System.Drawing.Point(701, 144);
             this.labelNotify.Name = "labelNotify";
-            this.labelNotify.Size = new System.Drawing.Size(175, 30);
+            this.labelNotify.Size = new System.Drawing.Size(296, 36);
             this.labelNotify.TabIndex = 13;
             this.labelNotify.Text = "Thông báo";
             this.labelNotify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -372,22 +370,21 @@
             this.tableLayoutPanelButtonSaveAndCancel.Controls.Add(this.buttonSave, 0, 0);
             this.tableLayoutPanelButtonSaveAndCancel.Controls.Add(this.buttonCancel, 1, 0);
             this.tableLayoutPanelButtonSaveAndCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelButtonSaveAndCancel.Location = new System.Drawing.Point(464, 60);
+            this.tableLayoutPanelButtonSaveAndCancel.Location = new System.Drawing.Point(690, 72);
             this.tableLayoutPanelButtonSaveAndCancel.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelButtonSaveAndCancel.Name = "tableLayoutPanelButtonSaveAndCancel";
             this.tableLayoutPanelButtonSaveAndCancel.RowCount = 1;
             this.tableLayoutPanelButtonSaveAndCancel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelButtonSaveAndCancel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanelButtonSaveAndCancel.Size = new System.Drawing.Size(261, 30);
+            this.tableLayoutPanelButtonSaveAndCancel.Size = new System.Drawing.Size(310, 36);
             this.tableLayoutPanelButtonSaveAndCancel.TabIndex = 28;
             // 
             // buttonSave
             // 
             this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSave.Enabled = false;
             this.buttonSave.Location = new System.Drawing.Point(3, 3);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(124, 24);
+            this.buttonSave.Size = new System.Drawing.Size(149, 30);
             this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Lưu";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -396,10 +393,9 @@
             // buttonCancel
             // 
             this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonCancel.Enabled = false;
-            this.buttonCancel.Location = new System.Drawing.Point(133, 3);
+            this.buttonCancel.Location = new System.Drawing.Point(158, 3);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(125, 24);
+            this.buttonCancel.Size = new System.Drawing.Size(149, 30);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "Hủy";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -413,32 +409,33 @@
             this.tableLayoutPanel2.Controls.Add(this.textBoxNotify, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonClearNotify, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(544, 150);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(698, 180);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.94444F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.055555F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(181, 366);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(302, 420);
             this.tableLayoutPanel2.TabIndex = 29;
             // 
             // textBoxNotify
             // 
             this.textBoxNotify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxNotify.Enabled = false;
+            this.textBoxNotify.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNotify.Location = new System.Drawing.Point(3, 3);
             this.textBoxNotify.Multiline = true;
             this.textBoxNotify.Name = "textBoxNotify";
             this.textBoxNotify.ReadOnly = true;
-            this.textBoxNotify.Size = new System.Drawing.Size(175, 330);
+            this.textBoxNotify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxNotify.Size = new System.Drawing.Size(296, 380);
             this.textBoxNotify.TabIndex = 15;
             // 
             // buttonClearNotify
             // 
             this.buttonClearNotify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonClearNotify.Location = new System.Drawing.Point(3, 339);
+            this.buttonClearNotify.Location = new System.Drawing.Point(3, 389);
             this.buttonClearNotify.Name = "buttonClearNotify";
-            this.buttonClearNotify.Size = new System.Drawing.Size(175, 24);
+            this.buttonClearNotify.Size = new System.Drawing.Size(296, 28);
             this.buttonClearNotify.TabIndex = 16;
             this.buttonClearNotify.Text = "Xóa thông báo";
             this.buttonClearNotify.UseVisualStyleBackColor = true;
@@ -450,7 +447,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Name = "ControlProduct";
-            this.Size = new System.Drawing.Size(725, 516);
+            this.Size = new System.Drawing.Size(1000, 600);
+            this.Load += new System.EventHandler(this.ControlProduct_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();

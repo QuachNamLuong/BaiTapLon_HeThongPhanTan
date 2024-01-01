@@ -438,8 +438,9 @@ C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.CopyComplete
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.exe
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.pdb
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.Demo6SiteForm1.resources
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo1.resources
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo3.resources
-C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo2.resources
 C:\Users\LuongQuach\source\repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.ControlProduct.resources
+C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo2SiteCopy.resources
+C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemoOwnerAndCopy.resources
+C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemoLastSite.resources
+C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.FormDemo6Site.resources
+C:\Users\LuongQuach\Source\Repos\BaiTapLon_HeThongPhanTan\BTL_HTPT\BTL_HTPT\obj\Debug\BTL_HTPT.csproj.AssemblyReference.cache

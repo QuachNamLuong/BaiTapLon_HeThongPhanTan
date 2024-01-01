@@ -1,7 +1,7 @@
 ﻿
 namespace BTL_HTPT
 {
-    partial class FormDemo3
+    partial class FormDemoLastSite
     {
         /// <summary>
         /// Required designer variable.
@@ -34,19 +34,21 @@ namespace BTL_HTPT
             // 
             // productControl1
             // 
+            this.productControl1.ConnectionString = null;
+            this.productControl1.ConnectionStringNext = null;
             this.productControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productControl1.Location = new System.Drawing.Point(0, 0);
             this.productControl1.Name = "productControl1";
-            this.productControl1.Size = new System.Drawing.Size(800, 450);
+            this.productControl1.Size = new System.Drawing.Size(984, 561);
             this.productControl1.TabIndex = 0;
             // 
-            // DemoForm3
+            // FormDemoLastSite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.productControl1);
-            this.Name = "DemoForm3";
+            this.Name = "FormDemoLastSite";
             this.Text = "DemoForm3";
             this.Load += new System.EventHandler(this.DemoForm3_Load);
             this.ResumeLayout(false);
