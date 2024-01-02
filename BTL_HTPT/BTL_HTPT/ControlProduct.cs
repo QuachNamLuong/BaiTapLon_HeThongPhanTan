@@ -269,9 +269,9 @@ namespace BTL_HTPT
                 SyncAgent agent = new SyncAgent(clientProvider, serverProvider);
 
                 //Bắt đầu đồng bộ
-                var syncContext = await agent.SynchronizeAsync(setup,SyncType.Normal);
+                var syncContext = await agent.SynchronizeAsync(setup,SyncType.Reinitialize);
 
-                WriteNoitify(result.ToString());
+                WriteNoitify(syncContext.ToString());
 
             }
             catch (Exception ex)
