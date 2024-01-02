@@ -64,10 +64,10 @@ namespace BTL_HTPT
             // 
             // controlProductOwner
             // 
-            this.controlProductOwner.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Passwo" +
+            this.controlProductOwner.ConnectionString = "Data Source=10.252.2.142;Initial Catalog=ProductManagementDB;User ID=sa;Password=" +
+    "123;Encrypt=True;TrustServerCertificate=True;";
+            this.controlProductOwner.ConnectionStringNext = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Passwo" +
     "rd=123;Encrypt=True;TrustServerCertificate=True;";
-            this.controlProductOwner.ConnectionStringNext = "Data Source=DESKTOP-7B6MP5S\\MSSQLSERVER1;Initial Catalog=ProductManagementDB;User" +
-    " ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
             this.controlProductOwner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlProductOwner.Location = new System.Drawing.Point(3, 3);
             this.controlProductOwner.Name = "controlProductOwner";
@@ -87,8 +87,8 @@ namespace BTL_HTPT
             // 
             // controlProductCopy
             // 
-            this.controlProductCopy.ConnectionString = "Data Source=DESKTOP-7B6MP5S\\MSSQLSERVER1;Initial Catalog=ProductManagementDB;User" +
-    " ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;";
+            this.controlProductCopy.ConnectionString = "Data Source=DESKTOP-7B6MP5S;Initial Catalog=ProductManagementDB;User ID=sa;Passwo" +
+    "rd=123;Encrypt=True;TrustServerCertificate=True;";
             this.controlProductCopy.ConnectionStringNext = null;
             this.controlProductCopy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.controlProductCopy.Location = new System.Drawing.Point(3, 3);

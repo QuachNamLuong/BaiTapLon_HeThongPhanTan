@@ -1,4 +1,5 @@
 ﻿using Dotmim.Sync;
+using Dotmim.Sync.Enumerations;
 using Dotmim.Sync.SqlServer;
 using System;
 using System.Data;
@@ -110,7 +111,6 @@ namespace BTL_HTPT
                 dateTimePickerManufactureDate.Value = manufactureDate;
                 bool.TryParse(dataGridViewProduct.Rows[index].Cells[4].Value.ToString(), out bool isAvailabel);
                 checkBoxIsAvailable.Checked = isAvailabel;
-                GetInfoProductFormInputField();
             }
             else
             {
@@ -265,10 +265,12 @@ namespace BTL_HTPT
                 var setup = new SyncSetup("Product");
 
                 // Khởi tạo lớp đông bộ
+                Dotmim.Sync.SyncOptions syncOptions = new SyncOptions();
                 SyncAgent agent = new SyncAgent(clientProvider, serverProvider);
 
-                // Bắt đầu đồng bộ
-                var result = await agent.SynchronizeAsync(setup);
+                //Bắt đầu đồng bộ
+                var syncContext = await agent.SynchronizeAsync(setup,SyncType.Normal);
+
                 WriteNoitify(result.ToString());
 
             }
