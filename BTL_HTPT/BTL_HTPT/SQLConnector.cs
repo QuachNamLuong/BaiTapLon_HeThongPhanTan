@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace BTL_HTPT
 {
-    class SQLConnector
+    public class SQLConnector
     {
         private string connectionString;
 
@@ -79,7 +79,5 @@ namespace BTL_HTPT
             }
             return isSuccess;
         }
-
-
     }
 }

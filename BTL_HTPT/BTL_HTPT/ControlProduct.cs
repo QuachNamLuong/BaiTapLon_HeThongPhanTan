@@ -254,14 +254,18 @@ namespace BTL_HTPT
         {
             try
             {
+                // Database chủ
                 SqlSyncProvider serverProvider = new SqlSyncProvider(serverConnectionString);
+                // Database đích
                 SqlSyncProvider clientProvider = new SqlSyncProvider(clientConnectionString);
 
+                // Chọn bảng Product
                 var setup = new SyncSetup("Product");
 
-                // Create sync agent
+                // Khởi tạo lớp đông bộ
                 SyncAgent agent = new SyncAgent(clientProvider, serverProvider);
 
+                // Bắt đầu đồng bộ
                 var result = await agent.SynchronizeAsync(setup);
                 WriteNoitify(result.ToString());
 
