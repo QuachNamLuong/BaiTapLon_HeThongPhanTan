@@ -139,11 +139,11 @@ namespace BTL_HTPT
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            GetInfoProductFormInputField();
             if (saveType == SaveType.INSERT)
             {
                 if (IsInputValid())
                 {
+                    GetInfoProductFormInputField();
                     if (productDAO.InsertProduct(product))
                     {
                         WriteNoitify("Thêm sản phẩm thành công.");
@@ -162,6 +162,7 @@ namespace BTL_HTPT
             {
                 if (IsInputValid())
                 {
+                    GetInfoProductFormInputField();
                     if (productDAO.UpdateProduct(product))
                     {
                         WriteNoitify("Cập nhật sản phẩm thành công.");
@@ -244,6 +245,7 @@ namespace BTL_HTPT
         {
             if (dataGridViewProduct.Rows.Count > 0)
             {
+                GetInfoProductFormInputField();
                 dataGridViewProduct.Rows.Remove(dataGridViewProduct.SelectedRows[0]);
                 saveType = SaveType.DELETE;
                 SetEnableEditButton(true);
